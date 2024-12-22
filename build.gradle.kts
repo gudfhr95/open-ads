@@ -46,6 +46,10 @@ allprojects {
         config.setFrom(files("$rootDir/detekt.yaml"))
     }
 
+    jacoco {
+        toolVersion = "0.8.12"
+    }
+
     tasks.withType<Test> {
         useJUnitPlatform()
 
@@ -53,12 +57,6 @@ allprojects {
     }
 
     tasks.jacocoTestReport {
-        reports {
-            html.required = true
-            xml.required = false
-            csv.required = false
-        }
-
         finalizedBy("jacocoTestCoverageVerification")
     }
 
