@@ -1,6 +1,5 @@
 plugins {
     kotlin("jvm")
-    kotlin("plugin.allopen")
 
     id("org.jlleitschuh.gradle.ktlint")
     id("io.gitlab.arturbosch.detekt")
@@ -9,7 +8,6 @@ plugins {
 
 allprojects {
     apply(plugin = "kotlin")
-    apply(plugin = "kotlin-allopen")
 
     apply(plugin = "org.jlleitschuh.gradle.ktlint")
     apply(plugin = "io.gitlab.arturbosch.detekt")

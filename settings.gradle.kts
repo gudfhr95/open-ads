@@ -5,4 +5,4 @@ plugins {
 
 rootProject.name = "open-ads"
 
-include("app")
+include("ads-manager")
