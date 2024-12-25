@@ -1,9 +1,11 @@
+import kotlinx.kover.gradle.plugin.dsl.CoverageUnit
+
 plugins {
     kotlin("jvm")
 
     id("org.jlleitschuh.gradle.ktlint")
     id("io.gitlab.arturbosch.detekt")
-    id("jacoco")
+    id("org.jetbrains.kotlinx.kover")
 }
 
 allprojects {
@@ -11,7 +13,7 @@ allprojects {
 
     apply(plugin = "org.jlleitschuh.gradle.ktlint")
     apply(plugin = "io.gitlab.arturbosch.detekt")
-    apply(plugin = "jacoco")
+    apply(plugin = "org.jetbrains.kotlinx.kover")
 
     group = "io.openads"
     version = "0.0.1"
@@ -46,38 +48,26 @@ allprojects {
         config.setFrom(files("$rootDir/detekt.yaml"))
     }
 
-    jacoco {
-        toolVersion = "0.8.12"
-    }
-
     tasks.withType<Test> {
         useJUnitPlatform()
 
-        finalizedBy("jacocoTestReport")
+        finalizedBy("koverHtmlReport")
     }
 
-    tasks.jacocoTestReport {
-        finalizedBy("jacocoTestCoverageVerification")
-    }
+    kover {
+        reports {
+            verify {
+                rule {
+                    minBound(
+                        minValue = 70,
+                        coverageUnits = CoverageUnit.LINE,
+                    )
 
-    tasks.jacocoTestCoverageVerification {
-        violationRules {
-            rule {
-                element = "CLASS"
-
-                limit {
-                    counter = "BRANCH"
-                    value = "COVEREDRATIO"
-                    minimum = BigDecimal.valueOf(0.70)
+                    minBound(
+                        minValue = 70,
+                        coverageUnits = CoverageUnit.BRANCH,
+                    )
                 }
-
-                limit {
-                    counter = "LINE"
-                    value = "COVEREDRATIO"
-                    minimum = BigDecimal.valueOf(0.70)
-                }
-
-                isFailOnViolation = true
             }
         }
     }

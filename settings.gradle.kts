@@ -8,3 +8,4 @@ rootProject.name = "open-ads"
 include("code-coverage-report")
 
 include("ads-manager")
+include("ads-tracker")

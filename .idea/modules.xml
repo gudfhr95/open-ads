@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ads-manager/open-ads.ads-manager.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ads-manager/open-ads.ads-manager.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ads-manager/open-ads.ads-manager.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ads-manager/open-ads.ads-manager.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ads-tracker/open-ads.ads-tracker.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ads-tracker/open-ads.ads-tracker.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ads-tracker/open-ads.ads-tracker.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ads-tracker/open-ads.ads-tracker.test.iml" />
     </modules>
   </component>
 </project>
