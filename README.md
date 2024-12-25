@@ -23,6 +23,9 @@ Open Ads
 - Java 21
 - Gradle
 - pre-commit
+- Docker
+- Kubernetes
+- Skaffold
 
 ### Installation
 
