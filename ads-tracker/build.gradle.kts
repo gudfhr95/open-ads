@@ -1,9 +1,9 @@
 plugins {
-    id("org.jetbrains.kotlinx.kover")
-
     kotlin("plugin.spring")
     id("org.springframework.boot")
     id("io.spring.dependency-management")
+
+    id("com.google.cloud.tools.jib")
 }
 
 group = "io.openads.adstracker"
@@ -24,5 +24,23 @@ kover {
                 classes(koverExcludedClasses)
             }
         }
+    }
+}
+
+tasks.jar {
+    enabled = false
+}
+
+jib {
+    dockerClient {
+        executable = dockerClientPath
+    }
+
+    from {
+        image = javaDockerImage
+    }
+
+    to {
+        image = "${project.name}:latest"
     }
 }
