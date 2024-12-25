@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ads-tracker
+spec:
+  selector:
+    app: ads-tracker
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

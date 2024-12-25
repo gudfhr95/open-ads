@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ads-tracker
+spec:
+  selector:
+    matchLabels:
+      app: ads-tracker
+  template:
+    metadata:
+      labels:
+        app: ads-tracker
+    spec:
+      containers:
+        - name: ads-tracker
+          image: ads-tracker
+          ports:
+            - containerPort: 8080

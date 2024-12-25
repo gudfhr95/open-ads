@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class HelloController {
     companion object {
-        const val HELLO_WORLD = "Hello, world!"
+        const val HELLO_WORLD = "Hello, Ads Tracker!"
     }
 
     @GetMapping("/hello")

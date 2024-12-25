@@ -1,0 +1,29 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: open-ads
+build:
+  artifacts:
+    - image: ads-manager
+      custom:
+        buildCommand: ./gradlew :ads-manager:jibDockerBuild
+        dependencies:
+          paths:
+            - ads-manager/*
+          ignore:
+            - ads-manager/build/*
+    - image: ads-tracker
+      custom:
+        buildCommand: ./gradlew :ads-tracker:jibDockerBuild
+        dependencies:
+          paths:
+            - ads-tracker/*
+          ignore:
+            - ads-tracker/build/*
+  tagPolicy:
+    sha256: { }
+  local:
+    push: false
+manifests:
+  rawYaml:
+    - k8s/*

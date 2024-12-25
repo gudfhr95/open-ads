@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ads-manager
+spec:
+  selector:
+    matchLabels:
+      app: ads-manager
+  template:
+    metadata:
+      labels:
+        app: ads-manager
+    spec:
+      containers:
+        - name: ads-manager
+          image: ads-manager
+          ports:
+            - containerPort: 8080
