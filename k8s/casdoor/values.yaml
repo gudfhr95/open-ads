@@ -1,0 +1,14 @@
+database:
+  driver: mysql
+  user: casdoor
+  password: casdoor
+  host: mysql.default.svc.cluster.local
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: casdoor.k8s.orb.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
