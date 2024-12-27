@@ -26,4 +26,12 @@ build:
     push: false
 manifests:
   rawYaml:
-    - k8s/*
+    - k8s/ads-manager/*
+    - k8s/ads-tracker/*
+  helm:
+    releases:
+      - name: mysql
+        remoteChart: oci://registry-1.docker.io/bitnamicharts/mysql
+        version: 12.2.0
+        valuesFiles:
+          - k8s/mysql/values.yaml
