@@ -4,49 +4,65 @@
 
 Open Ads
 
+- Domain driven design
+- Microservice architecture
+
 ### Key Features
 
 - **Campaign Management**: Manage campaigns for advertisers.
 
-## Project Structure
+## Domains
 
-### ads-manager
+### Core Subdomains
+
+#### ads-manager
 
 - Built with
     - Kotlin
     - Gradle
 
-## Getting Started
+#### ads-tracker
+
+### Generic Subdomains
+
+#### Casdoor, Casbin
+
+Authentication and authorization service.
+
+### Supporting Subdomains
+
+## Development
 
 ### Prerequisites
 
 - Java 21
 - Gradle
-- pre-commit
 - Docker
 - Kubernetes
 - Skaffold
 
 ### Installation
 
-1. Clone the repository:
+1. Clone the repository
    ```sh
    git clone https://github.com/gudfhr95/open-ads.git
    cd open-ads
    ```
-2. Install pre-commit hooks:
+2. Install pre-commit hooks
    ```sh
    pre-commit install
     ```
-3. Build the project:
-   ```sh
-   ./gradlew build
-   Run the application:
-   ./gradlew run
-   ```
+
+### Running Locally
+
+```sh
+skaffold dev
+```
 
 ## Deploy
 
 ## Contact
 
-ghldnjsdlf@gmail.com
+[@gudfhr95](https://github.com/gudfhr95)
+
+## Acknowledgements
