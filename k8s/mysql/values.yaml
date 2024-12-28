@@ -1,4 +1,6 @@
 primary:
+  service:
+    type: LoadBalancer
   startupProbe:
     enabled: false
   readinessProbe:
