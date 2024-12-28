@@ -35,7 +35,7 @@ deploy:
         wait: true
       - name: casdoor
         remoteChart: oci://registry-1.docker.io/casbin/casdoor-helm-charts
-        version: v1.777.0
+        version: v1.779.0
         valuesFiles:
           - k8s/casdoor/values.yaml
 manifests:
