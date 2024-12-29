@@ -1,0 +1,17 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          casdoor:
+            client-id: 54e0fa1d1d16c7ebe30a
+            client-secret: 74e208449940570fcdd69e4f9bcf3ad2d1456844
+            scope: read,write
+            authorization-grant-type: authorization_code
+            redirect-uri: https://ads-manager.k8s.orb.local/login/oauth2/code/casdoor
+        provider:
+          casdoor:
+            authorization-uri: https://casdoor.k8s.orb.local/login/oauth/authorize
+            token-uri: http://casdoor.casdoor.svc.cluster.local/api/login/oauth/access_token
+            user-info-uri: http://casdoor.casdoor.svc.cluster.local/api/user
+            user-name-attribute: name

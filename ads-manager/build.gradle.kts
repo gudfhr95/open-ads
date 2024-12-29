@@ -11,8 +11,11 @@ version = "0.0.1"
 
 dependencies {
     implementation(Spring.boot.webflux)
+    implementation(Spring.boot.security)
+    implementation(Spring.boot.oauth2Client)
 
     testImplementation(Spring.boot.test)
+    testImplementation(Spring.security.spring_security_test)
 }
 
 val koverExcludedClasses = listOf("*AdsManagerApplication*")
