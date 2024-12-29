@@ -2,7 +2,10 @@ database:
   driver: mysql
   user: casdoor
   password: casdoor
-  host: mysql.default.svc.cluster.local
+  host: mysql.mysql.svc.cluster.local
+
+service:
+  port: 80
 
 ingress:
   enabled: true

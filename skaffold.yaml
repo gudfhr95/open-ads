@@ -30,12 +30,16 @@ deploy:
       - name: mysql
         remoteChart: oci://registry-1.docker.io/bitnamicharts/mysql
         version: 12.2.0
+        namespace: mysql
+        createNamespace: true
         valuesFiles:
           - k8s/mysql/values.yaml
         wait: true
       - name: casdoor
         remoteChart: oci://registry-1.docker.io/casbin/casdoor-helm-charts
         version: v1.779.0
+        namespace: casdoor
+        createNamespace: true
         valuesFiles:
           - k8s/casdoor/values.yaml
 manifests:
