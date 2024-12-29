@@ -13,6 +13,7 @@ dependencies {
     implementation(Spring.boot.webflux)
     implementation(Spring.boot.security)
     implementation(Spring.boot.oauth2Client)
+    implementation(Spring.boot.oauth2ResourceServer)
 
     testImplementation(Spring.boot.test)
     testImplementation(Spring.security.spring_security_test)

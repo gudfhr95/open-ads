@@ -16,6 +16,9 @@ class SecurityConfig {
                 it.pathMatchers("/login**").permitAll()
                 it.anyExchange().authenticated()
             }.oauth2Login { }
-            .logout { }
+            .oauth2ResourceServer { resourceServer ->
+                resourceServer.jwt {}
+            }.logout { }
+            .csrf { it.disable() }
             .build()
 }

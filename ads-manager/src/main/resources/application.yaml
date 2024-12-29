@@ -15,3 +15,6 @@ spring:
             token-uri: http://casdoor.casdoor.svc.cluster.local/api/login/oauth/access_token
             user-info-uri: http://casdoor.casdoor.svc.cluster.local/api/user
             user-name-attribute: name
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://casdoor.casdoor.svc.cluster.local/.well-known/jwks
