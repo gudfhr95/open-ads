@@ -1,0 +1,9 @@
+primary:
+  service:
+    type: LoadBalancer
+  startupProbe:
+    enabled: false
+  readinessProbe:
+    enabled: false
+  livenessProbe:
+    enabled: false

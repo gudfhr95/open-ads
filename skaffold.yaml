@@ -35,6 +35,14 @@ deploy:
         valuesFiles:
           - k8s/mysql/values.yaml
         wait: true
+      - name: postgresql
+        remoteChart: oci://registry-1.docker.io/bitnamicharts/postgresql
+        version: 16.4.2
+        namespace: postgresql
+        createNamespace: true
+        valuesFiles:
+          - k8s/postgresql/values.yaml
+        wait: true
       - name: casdoor
         remoteChart: oci://registry-1.docker.io/casbin/casdoor-helm-charts
         version: v1.779.0
