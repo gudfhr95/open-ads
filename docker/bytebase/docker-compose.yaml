@@ -1,0 +1,14 @@
+services:
+  postgresql:
+    image: bitnami/postgresql:17
+    environment:
+      - POSTGRESQL_PASSWORD=postgres
+    volumes:
+      - postgresql:/bitnami/postgresql
+      - ./scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgresql:
+    driver: local

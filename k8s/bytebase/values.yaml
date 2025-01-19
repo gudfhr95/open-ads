@@ -1,0 +1,5 @@
+bytebase:
+  option:
+    disable-sample: false
+    externalPg:
+      url: postgresql://bytebase:bytebase@postgresql.postgresql.svc.cluster.local/bytebase
