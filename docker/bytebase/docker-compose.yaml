@@ -1,14 +1,10 @@
 services:
-  postgresql:
-    image: bitnami/postgresql:17
-    environment:
-      - POSTGRESQL_PASSWORD=postgres
+  bytebase:
+    image: bytebase/bytebase:3.3.0
     volumes:
-      - postgresql:/bitnami/postgresql
-      - ./scripts:/docker-entrypoint-initdb.d
-    ports:
-      - "5432:5432"
+      - bytebase:/var/opt/bytebase
+    command: [ "--data", "/var/opt/bytebase", "--port", "80" ]
 
 volumes:
-  postgresql:
+  bytebase:
     driver: local
