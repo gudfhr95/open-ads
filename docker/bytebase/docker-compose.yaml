@@ -1,9 +1,10 @@
 services:
   bytebase:
     image: bytebase/bytebase:3.3.0
+    ports:
+      - "8080:8080"
     volumes:
       - bytebase:/var/opt/bytebase
-    command: [ "--data", "/var/opt/bytebase", "--port", "80" ]
 
 volumes:
   bytebase:

@@ -1,8 +1,8 @@
 services:
   casdoor:
     image: casbin/casdoor-all-in-one:latest
-    environment:
-      - httpport=80
+    ports:
+      - "8000:8000"
     volumes:
       - casdoor:/var/lib/mysql
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ads-manager/open-ads.ads-manager.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ads-manager/open-ads.ads-manager.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ads-manager/open-ads.ads-manager.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ads-manager/open-ads.ads-manager.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ads-tracker/open-ads.ads-tracker.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ads-tracker/open-ads.ads-tracker.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ads-tracker/open-ads.ads-tracker.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ads-tracker/open-ads.ads-tracker.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc/open-ads.buildSrc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc/open-ads.buildSrc.main.iml" />
+    </modules>
+  </component>
+</project>

@@ -38,8 +38,6 @@ Authentication and authorization service.
 - Java 21
 - Gradle
 - Docker
-- Kubernetes
-- Skaffold
 
 ### Installation
 
@@ -56,7 +54,7 @@ Authentication and authorization service.
 ### Running Locally
 
 ```sh
-skaffold dev
+docker-compose -f docker/docker-compose.yaml up -d
 ```
 
 ## Deploy

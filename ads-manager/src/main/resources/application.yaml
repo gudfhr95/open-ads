@@ -1,20 +1,23 @@
+server:
+  port: 3000
+
 spring:
   security:
     oauth2:
       client:
         registration:
           casdoor:
-            client-id: 54e0fa1d1d16c7ebe30a
-            client-secret: 74e208449940570fcdd69e4f9bcf3ad2d1456844
+            client-id: fbaeb1e7a8895862e7a5
+            client-secret: bcc1be441454b24d29471f77caecf2640b9c1580
             scope: read,write
             authorization-grant-type: authorization_code
-            redirect-uri: https://ads-manager.k8s.orb.local/login/oauth2/code/casdoor
+            redirect-uri: http://localhost:3000/login/oauth2/code/casdoor
         provider:
           casdoor:
-            authorization-uri: https://casdoor.k8s.orb.local/login/oauth/authorize
-            token-uri: http://casdoor.casdoor.svc.cluster.local/api/login/oauth/access_token
-            user-info-uri: http://casdoor.casdoor.svc.cluster.local/api/user
+            authorization-uri: http://localhost:8000/login/oauth/authorize
+            token-uri: http://localhost:8000/api/login/oauth/access_token
+            user-info-uri: http://localhost:8000/api/user
             user-name-attribute: name
       resourceserver:
         jwt:
-          jwk-set-uri: http://casdoor.casdoor.svc.cluster.local/.well-known/jwks
+          jwk-set-uri: http://localhost:8000/.well-known/jwks

@@ -4,10 +4,14 @@ include:
   - ./mysql/docker-compose.yaml
 
 services:
+  ads-manager:
+    image: ads-manager:latest
+    depends_on:
+      - mysql
+      - casdoor
+
   ads-tracker:
     image: ads-tracker:latest
     depends_on:
       - mysql
       - casdoor
-    environment:
-      - SERVER_PORT=80
