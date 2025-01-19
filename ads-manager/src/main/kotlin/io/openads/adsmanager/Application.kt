@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class AdsManagerApplication
+class Application
 
 fun main(args: Array<String>) {
-    runApplication<AdsManagerApplication>(args = args)
+    runApplication<Application>(args = args)
 }

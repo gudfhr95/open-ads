@@ -10,11 +10,14 @@ group = "io.openads.adsmanager"
 version = "0.0.1"
 
 dependencies {
+    implementation(platform("org.springframework.modulith:spring-modulith-bom:_"))
+
     implementation(Spring.boot.webflux)
     implementation(Spring.boot.security)
     implementation(Spring.boot.oauth2Client)
     implementation(Spring.boot.oauth2ResourceServer)
 
+    testImplementation("org.springframework.modulith:spring-modulith-starter-test")
     testImplementation(Spring.boot.test)
     testImplementation(Spring.security.spring_security_test)
 }

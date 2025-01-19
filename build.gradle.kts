@@ -24,7 +24,9 @@ allprojects {
 
     dependencies {
         implementation("org.jetbrains.kotlin:kotlin-reflect")
+
         testImplementation(Kotlin.test.junit5)
+        testImplementation(Testing.kotest.runner.junit5)
         testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     }
 
