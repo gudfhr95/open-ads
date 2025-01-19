@@ -1,0 +1,11 @@
+services:
+  casdoor:
+    image: casbin/casdoor-all-in-one:latest
+    environment:
+      - httpport=80
+    volumes:
+      - casdoor:/var/lib/mysql
+
+volumes:
+  casdoor:
+    driver: local

@@ -24,16 +24,6 @@ build:
     sha256: { }
   local:
     push: false
-deploy:
-  helm:
-    releases:
-      - name: casdoor
-        remoteChart: oci://registry-1.docker.io/casbin/casdoor-helm-charts
-        version: v1.779.0
-        namespace: casdoor
-        createNamespace: true
-        valuesFiles:
-          - k8s/casdoor/values.yaml
 manifests:
   rawYaml:
     - k8s/ads-manager/*

@@ -1,3 +1,4 @@
 include:
   - ./bytebase/docker-compose.yaml
+  - ./casdoor/docker-compose.yaml
   - ./mysql/docker-compose.yaml
