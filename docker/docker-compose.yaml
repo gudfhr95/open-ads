@@ -2,3 +2,12 @@ include:
   - ./bytebase/docker-compose.yaml
   - ./casdoor/docker-compose.yaml
   - ./mysql/docker-compose.yaml
+
+services:
+  ads-tracker:
+    image: ads-tracker:latest
+    depends_on:
+      - mysql
+      - casdoor
+    environment:
+      - SERVER_PORT=80

@@ -12,14 +12,6 @@ build:
             - ads-manager/*
           ignore:
             - ads-manager/build/*
-    - image: ads-tracker
-      custom:
-        buildCommand: ./gradlew :ads-tracker:jibDockerBuild
-        dependencies:
-          paths:
-            - ads-tracker/*
-          ignore:
-            - ads-tracker/build/*
   tagPolicy:
     sha256: { }
   local:
@@ -27,4 +19,3 @@ build:
 manifests:
   rawYaml:
     - k8s/ads-manager/*
-    - k8s/ads-tracker/*

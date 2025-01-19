@@ -32,10 +32,6 @@ tasks.jar {
 }
 
 jib {
-    dockerClient {
-        executable = dockerClientPath
-    }
-
     from {
         image = javaDockerImage
     }
