@@ -1,0 +1,13 @@
+services:
+  mysql:
+    image: bitnami/mysql:8.4
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql:/bitnami/mysql/data
+
+volumes:
+  mysql:
+    driver: local
