@@ -4,7 +4,6 @@ plugins {
     kotlin("jvm")
 
     id("org.jlleitschuh.gradle.ktlint")
-    id("io.gitlab.arturbosch.detekt")
     id("org.jetbrains.kotlinx.kover")
 }
 
@@ -12,7 +11,6 @@ allprojects {
     apply(plugin = "kotlin")
 
     apply(plugin = "org.jlleitschuh.gradle.ktlint")
-    apply(plugin = "io.gitlab.arturbosch.detekt")
     apply(plugin = "org.jetbrains.kotlinx.kover")
 
     group = "io.openads"
@@ -44,10 +42,6 @@ allprojects {
 
     ktlint {
         version = "1.5.0"
-    }
-
-    detekt {
-        config.setFrom(files("$rootDir/detekt.yaml"))
     }
 
     tasks.withType<Test> {

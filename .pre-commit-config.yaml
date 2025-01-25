@@ -12,5 +12,3 @@ repos:
         args: [ '-w', 'ktlintFormat' ]
       - id: gradle-task
         args: [ '-w', 'ktlintCheck' ]
-      - id: gradle-task
-        args: [ '-w', 'detekt' ]

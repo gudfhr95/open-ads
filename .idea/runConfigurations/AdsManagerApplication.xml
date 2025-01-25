@@ -1,12 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="AdsManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <configuration default="false" name="AdsManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <module name="open-ads.ads-manager.main" />
-    <option name="SPRING_BOOT_MAIN_CLASS" value="io.openads.adsmanager.AdsManagerApplication" />
-    <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
-      <option name="credential" />
-      <option name="region" />
-      <option name="useCurrentConnection" value="false" />
-    </extension>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="io.openads.adsmanager.Application" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
