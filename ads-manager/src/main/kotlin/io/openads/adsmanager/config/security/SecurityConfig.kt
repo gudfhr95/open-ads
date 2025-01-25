@@ -12,15 +12,15 @@ class SecurityConfig(
     private val jwtAuthenticationManager: JwtAuthenticationManager,
 ) {
     @Bean
-    fun securityWebFilterChain(http: ServerHttpSecurity): SecurityWebFilterChain =
-        http
-            .authorizeExchange {
-                it.anyExchange().authenticated()
-            }.oauth2ResourceServer { resourceServer ->
-                resourceServer.jwt { jwt ->
-                    jwt.authenticationManager(jwtAuthenticationManager)
-                }
-            }.logout { }
-            .csrf { it.disable() }
-            .build()
+    fun securityWebFilterChain(http: ServerHttpSecurity): SecurityWebFilterChain = http
+        .authorizeExchange {
+            it.anyExchange().authenticated()
+        }
+        .oauth2ResourceServer { resourceServer ->
+            resourceServer.jwt { jwt ->
+                jwt.authenticationManager(jwtAuthenticationManager)
+            }
+        }
+        .csrf { it.disable() }
+        .build()
 }

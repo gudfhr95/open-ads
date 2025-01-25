@@ -14,20 +14,18 @@ import reactor.core.publisher.Mono
 class JwtAuthenticationManager(
     val authService: AuthService,
 ) : ReactiveAuthenticationManager {
-    override fun authenticate(authentication: Authentication): Mono<Authentication> =
-        mono {
-            val jwt = authentication.name
-            val user = authService.parseJwtToken(jwt)
+    override fun authenticate(authentication: Authentication): Mono<Authentication> = mono {
+        val jwt = authentication.name
+        val user = authService.parseJwtToken(jwt)
 
-            val authenticationToken =
-                UsernamePasswordAuthenticationToken(
-                    user,
-                    null,
-                    AuthorityUtils.createAuthorityList("ROLE_casdoor"),
-                )
+        val authenticationToken = UsernamePasswordAuthenticationToken(
+            user,
+            null,
+            AuthorityUtils.createAuthorityList(user.roles.map { it.name }),
+        )
 
-            ReactiveSecurityContextHolder.withAuthentication(authenticationToken)
+        ReactiveSecurityContextHolder.withAuthentication(authenticationToken)
 
-            authenticationToken
-        }
+        authenticationToken
+    }
 }
