@@ -1,6 +1,6 @@
 include:
   - ./bytebase/docker-compose.yaml
-  - ./casdoor/docker-compose.yaml
+  - ./keycloak/docker-compose.yaml
   - ./mysql/docker-compose.yaml
 
 services:
@@ -8,10 +8,10 @@ services:
     image: ads-manager:latest
     depends_on:
       - mysql
-      - casdoor
+      - keycloak
 
   ads-tracker:
     image: ads-tracker:latest
     depends_on:
       - mysql
-      - casdoor
+      - keycloak

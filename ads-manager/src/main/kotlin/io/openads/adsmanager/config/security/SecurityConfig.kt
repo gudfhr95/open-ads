@@ -8,17 +8,15 @@ import org.springframework.security.web.server.SecurityWebFilterChain
 
 @Configuration
 @EnableWebFluxSecurity
-class SecurityConfig(
-    private val jwtAuthenticationManager: JwtAuthenticationManager,
-) {
+class SecurityConfig {
     @Bean
     fun securityWebFilterChain(http: ServerHttpSecurity): SecurityWebFilterChain = http
         .authorizeExchange {
             it.anyExchange().authenticated()
         }
-        .oauth2ResourceServer { resourceServer ->
-            resourceServer.jwt { jwt ->
-                jwt.authenticationManager(jwtAuthenticationManager)
+        .oauth2ResourceServer {
+            it.jwt {
+                it.jwtAuthenticationConverter(JwtAuthenticationConverter())
             }
         }
         .csrf { it.disable() }

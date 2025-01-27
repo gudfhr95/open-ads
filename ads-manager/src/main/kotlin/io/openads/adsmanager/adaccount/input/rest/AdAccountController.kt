@@ -1,7 +1,7 @@
 package io.openads.adsmanager.adaccount.input.rest
 
-import io.openads.adsmanager.adaccount.application.CreateAdAccountUseCase
-import org.casbin.casdoor.entity.User
+import io.openads.adsmanager.adaccount.usecase.CreateAdAccountUseCase
+import io.openads.adsmanager.common.domain.entity.User
 import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping

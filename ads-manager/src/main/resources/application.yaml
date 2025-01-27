@@ -6,41 +6,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://localhost:8000/.well-known/jwks
-
-casdoor:
-  endpoint: http://localhost:8000
-  clientId: 4d6b9c3ef76525db6540
-  clientSecret: 0d4e8b5495a35dc73ca4e0efdd6cf8d12fffa8b8
-  organization-name: open-ads
-  application-name: open-ads
-  certificate: |-
-    -----BEGIN CERTIFICATE-----
-    MIIE3TCCAsWgAwIBAgIDAeJAMA0GCSqGSIb3DQEBCwUAMCgxDjAMBgNVBAoTBWFk
-    bWluMRYwFAYDVQQDEw1jZXJ0LWJ1aWx0LWluMB4XDTI1MDExOTA4NTYyNFoXDTQ1
-    MDExOTA4NTYyNFowKDEOMAwGA1UEChMFYWRtaW4xFjAUBgNVBAMTDWNlcnQtYnVp
-    bHQtaW4wggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCpb/Uprp1WstJ+
-    rFYNgaoD92QlpdDIa+xC7zhykqL6cd7jA5xHIUWCH6ps/DlJMqfhJU5ACKVcb/HZ
-    ZwAaoHcs9iej7lc1GgQa/vHkaBKbey9qx93CV6YBRIYdjGqBaERFFBw9aOFH5+p8
-    bWT/hBcOFA/mQr9g4iEhNATkxU7Y7fo2pRwjL+VHBSu9oRogq32PVL+omWBzt9Mg
-    i1r+vzQV8onNxJdgHEOVP5Q7mLBdmtX1ZohM0h0O6XGkZqfmjVEZA9IvW8ZVSyhT
-    EEOjjaCrIR9zMNGHz2DzPyHHKaXGwWPh52myOfEgeX5RsKYwrt2mw/1C/hM4wPge
-    OW7O8q1/nke8PvD3P9uHXEHmwjrzBzJnDYjklU2FtpCmnng/jKgLXk7zCHJJJYfH
-    GSrUaAOCO4cPXuEU4wTGmOacywAuRnGydtxNn2E4nx1DE94rShMMnSeDcviHMKI0
-    DgAiaUUTQ44VluhEOOS7LcB2YwvKI5qgLAoX6c4X1y6WSMJcpsC8FNLIN8XQSJ9t
-    OQUg6ccFysYUjp3fmFTwbeUlAZ3gmSbXSAgyk3TjEX50NXrvlHurOq1GfE4GhdGY
-    8ZajuL6viEpCZ7/BRY3vzHBC4VlgDgEdu2uTqsAXeRWlBStM+RY03x3sCd8uZubz
-    dXOSkC/AlMuqjswnm/goOTGGxdgS/QIDAQABoxAwDjAMBgNVHRMBAf8EAjAAMA0G
-    CSqGSIb3DQEBCwUAA4ICAQCEBZ9M9L+LTlgLa2M/RuLl58Qp5MJzPrib2tHYgWa1
-    5/FxGbDPjhHS0KD/4x101ae6xpNmqbz4ssqJvP/t2bNRRTQKXmuW1E4ZG3U53vCm
-    U9p9nW3rGvc+ZL0W0Av/4xpnh8+dey+seA+pRg2ITjNBfSOPN79tN/LBQmaKHd5l
-    MDkkrMjyXTcQakmvk+EOBHoN+Kbkb2c6wynR+k5xHCxE9R6HLp/ej6m+OXCG01pv
-    73iPktVNKVX3rzLvjayDynLLhAa/FxTXAx9Q7B726LBCbRNKlygxIbQ/klIYMCwj
-    haWZT01St7mkrn7pW+prm66OyChjBZU39p0tDm+qX+wxtouhOGRA1hUxXGNCuiwi
-    aJm8sl/nRxCb6k8v6BkgicPRZu24Y69HoBwNmGIBBfoB9hfAcDLmF7gB33Cc2Na6
-    6ZOQyUyO1FZkiMxWfdJ40KAZflZ90ZtP9wKWIQEyXwUTDXW230AE3JMxczIf4QNz
-    vXH+bdvlbpx0rfpGeMWu9cyGuSZkSYjXhVh5G6O4sNBW49UN33XMTsJsfBfs43YZ
-    XZwIYN8JZz2CQbMILuUb1wW87em3YT0sdW4YXO3Am749nf+iDG6eBxjBb+Pb0b9x
-    qefOFujkTOJd2mXtlHuSE/heUrfnFTv2tGdfMIqhcY2xVh+JOnwGnA+8yxkPrzet
-    UA==
-    -----END CERTIFICATE-----
+          jwk-set-uri: http://localhost:8000/realms/open-ads/protocol/openid-connect/certs

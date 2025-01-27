@@ -1,4 +1,4 @@
-package io.openads.adsmanager.adaccount.application
+package io.openads.adsmanager.adaccount.usecase
 
 import org.springframework.stereotype.Service
 

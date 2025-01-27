@@ -18,7 +18,6 @@ dependencies {
     implementation(Spring.boot.webflux)
     implementation(Spring.boot.security)
     implementation(Spring.boot.oauth2ResourceServer)
-    implementation("org.casbin:casdoor-spring-boot-starter:_")
 
     testImplementation("org.springframework.modulith:spring-modulith-starter-test")
     testImplementation(Spring.boot.test)
