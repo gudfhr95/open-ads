@@ -12,12 +12,13 @@ version = "0.0.1"
 dependencies {
     implementation(platform("org.springframework.modulith:spring-modulith-bom:_"))
 
-    implementation(KotlinX.coroutines.core)
-    implementation(KotlinX.coroutines.reactor)
-
+    implementation("org.springframework.modulith:spring-modulith-core")
     implementation(Spring.boot.webflux)
     implementation(Spring.boot.security)
     implementation(Spring.boot.oauth2ResourceServer)
+
+    implementation(KotlinX.coroutines.core)
+    implementation(KotlinX.coroutines.reactor)
 
     testImplementation("org.springframework.modulith:spring-modulith-starter-test")
     testImplementation(Spring.boot.test)

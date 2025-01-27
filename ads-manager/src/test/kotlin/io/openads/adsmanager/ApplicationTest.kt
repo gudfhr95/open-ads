@@ -7,7 +7,11 @@ import org.springframework.modulith.docs.Documenter
 class ApplicationTest : AnnotationSpec() {
     @Test
     fun writeDocumentationSnippets() {
-        val modules = ApplicationModules.of(Application::class.java).verify()
+        val modules = ApplicationModules.of(Application::class.java)
+
+        modules.forEach { println(it) }
+
+        modules.verify()
 
         Documenter(modules)
             .writeModulesAsPlantUml()
