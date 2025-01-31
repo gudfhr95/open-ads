@@ -17,6 +17,7 @@ dependencies {
 
     implementation("org.springframework.modulith:spring-modulith-core")
     implementation(Spring.boot.webflux)
+    implementation(Spring.boot.validation)
     implementation(Spring.boot.security)
     implementation(Spring.boot.oauth2ResourceServer)
     implementation(Spring.boot.data.r2dbc)
