@@ -4,28 +4,28 @@ import io.kotest.core.listeners.AfterTestListener
 import io.kotest.core.listeners.BeforeTestListener
 import io.kotest.core.test.TestCase
 import io.kotest.core.test.TestResult
-import io.openads.adsmanager.adaccount.domain.entity.AdUser
-import io.openads.adsmanager.common.domain.vo.UserId
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.authority.AuthorityUtils
 import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.security.oauth2.jwt.Jwt
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken
+import java.util.UUID
 
-class SecurityExtension(
-    private val id: String = "1",
-    private val roles: List<String> = emptyList(),
+class MockJwtExtension(
+    private val id: String = UUID.randomUUID().toString(),
+    private val username: String = "test",
 ) : BeforeTestListener,
     AfterTestListener {
     override suspend fun beforeTest(testCase: TestCase) {
-        val authorities = AuthorityUtils.createAuthorityList(roles)
-        val user = AdUser.of(
-            userId = UserId(id),
-            name = "test",
-        )
+        val jwt = Jwt.withTokenValue("token")
+            .header("alg", "none")
+            .subject(id)
+            .claim("name", username)
+            .build()
 
-        val token = UsernamePasswordAuthenticationToken(
-            user,
-            null,
-            authorities,
+        val token = JwtAuthenticationToken(
+            jwt,
+            AuthorityUtils.createAuthorityList(),
+            username,
         )
 
         val context = SecurityContextHolder.createEmptyContext()
