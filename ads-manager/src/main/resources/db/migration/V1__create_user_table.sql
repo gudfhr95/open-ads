@@ -1,0 +1,4 @@
+CREATE table user
+(
+  id BIGINT AUTO_INCREMENT PRIMARY KEY
+);
