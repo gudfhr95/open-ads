@@ -5,7 +5,7 @@ import io.kotest.extensions.spring.SpringExtension
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-abstract class SpringBootTestSpec(
+abstract class AcceptanceTestSpec(
     body: BehaviorSpec.() -> Unit,
 ) : BehaviorSpec(body) {
     override fun extensions() = listOf(SpringExtension)

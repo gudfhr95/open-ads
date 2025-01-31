@@ -1,11 +1,11 @@
 package io.openads.adsmanager.adaccount.input.rest
 
 import io.openads.adsmanager.test.extension.SecurityExtension
-import io.openads.adsmanager.test.spec.SpringBootTestSpec
+import io.openads.adsmanager.test.spec.AcceptanceTestSpec
 import org.springframework.test.web.reactive.server.WebTestClient
 
 class AdAccountControllerTest(val client: WebTestClient) :
-    SpringBootTestSpec({
+    AcceptanceTestSpec({
         Given("a user") {
             extensions(SecurityExtension())
 
