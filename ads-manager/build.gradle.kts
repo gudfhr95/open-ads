@@ -1,7 +1,7 @@
 plugins {
-    kotlin("plugin.spring")
     id("org.springframework.boot")
     id("io.spring.dependency-management")
+    id("org.jetbrains.kotlin.plugin.spring")
 
     id("com.google.cloud.tools.jib")
 }
@@ -19,11 +19,11 @@ dependencies {
     implementation(Spring.boot.webflux)
     implementation(Spring.boot.security)
     implementation(Spring.boot.oauth2ResourceServer)
-    implementation(Spring.boot.data.jdbc)
-    runtimeOnly("com.mysql:mysql-connector-j")
-
+    implementation(Spring.boot.data.r2dbc)
+    runtimeOnly("com.github.jasync-sql:jasync-r2dbc-mysql:_")
     implementation("org.flywaydb:flyway-core")
     implementation("org.flywaydb:flyway-mysql")
+    runtimeOnly("com.mysql:mysql-connector-j")
 
     testImplementation("org.springframework.modulith:spring-modulith-starter-test")
     testImplementation(Spring.boot.test)

@@ -1,4 +1,4 @@
-CREATE table user
+CREATE table ad_users
 (
   id BIGINT AUTO_INCREMENT PRIMARY KEY
 );

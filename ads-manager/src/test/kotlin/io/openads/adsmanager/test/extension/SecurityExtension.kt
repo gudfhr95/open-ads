@@ -17,7 +17,7 @@ class SecurityExtension(
     override suspend fun beforeTest(testCase: TestCase) {
         val authorities = AuthorityUtils.createAuthorityList(roles)
         val user = User.of(
-            id = id,
+            userId = id,
         )
 
         val token = UsernamePasswordAuthenticationToken(
