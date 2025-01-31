@@ -16,6 +16,9 @@ class AdUser(
         fun of(
             userId: UserId,
             name: String,
-        ) = AdUser(userId, name)
+        ) = AdUser(
+            userId = userId,
+            name = name,
+        )
     }
 }

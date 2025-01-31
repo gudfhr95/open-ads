@@ -19,6 +19,9 @@ class AdUserControllerV1(
         @AuthenticationPrincipal jwt: Jwt,
         @RequestBody @Valid request: CreateAdUserRequestV1,
     ) {
-        createAdUser(jwt.subject)
+        createAdUser(
+            userId = jwt.subject,
+            name = request.name,
+        )
     }
 }

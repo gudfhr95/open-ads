@@ -7,7 +7,13 @@ import org.springframework.stereotype.Service
 class CreateAdUserUseCase(
     private val createAdUser: CreateAdUserService,
 ) {
-    suspend operator fun invoke(userId: String) {
-        createAdUser(userId)
+    suspend operator fun invoke(
+        userId: String,
+        name: String,
+    ) {
+        createAdUser(
+            name = name,
+            userId = userId,
+        )
     }
 }

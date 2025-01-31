@@ -9,11 +9,18 @@ import org.springframework.stereotype.Service
 class CreateAdUserService(
     private val adUserRepository: AdUserRepository,
 ) {
-    suspend operator fun invoke(userId: String) {
+    suspend operator fun invoke(
+        userId: String,
+        name: String,
+    ) {
+        check(!adUserRepository.existsByUserId(userId)) {
+            "User already exists"
+        }
+
         adUserRepository.save(
             AdUser.of(
                 userId = UserId(userId),
-                name = "User $userId",
+                name = name,
             ),
         )
     }
