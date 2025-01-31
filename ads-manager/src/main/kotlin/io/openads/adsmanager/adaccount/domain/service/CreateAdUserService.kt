@@ -10,16 +10,16 @@ class CreateAdUserService(
     private val adUserRepository: AdUserRepository,
 ) {
     suspend operator fun invoke(
-        userId: String,
+        userId: UserId,
         name: String,
-    ) {
+    ): AdUser {
         check(!adUserRepository.existsByUserId(userId)) {
             "User already exists"
         }
 
-        adUserRepository.save(
+        return adUserRepository.save(
             AdUser.of(
-                userId = UserId(userId),
+                userId = userId,
                 name = name,
             ),
         )

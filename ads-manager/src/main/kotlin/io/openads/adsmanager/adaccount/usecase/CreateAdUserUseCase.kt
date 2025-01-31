@@ -1,6 +1,7 @@
 package io.openads.adsmanager.adaccount.usecase
 
 import io.openads.adsmanager.adaccount.domain.service.CreateAdUserService
+import io.openads.adsmanager.common.domain.vo.UserId
 import org.springframework.stereotype.Service
 
 @Service
@@ -8,12 +9,10 @@ class CreateAdUserUseCase(
     private val createAdUser: CreateAdUserService,
 ) {
     suspend operator fun invoke(
-        userId: String,
+        userId: UserId,
         name: String,
-    ) {
-        createAdUser(
-            name = name,
-            userId = userId,
-        )
-    }
+    ) = createAdUser(
+        userId = userId,
+        name = name,
+    )
 }
