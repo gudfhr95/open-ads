@@ -16,6 +16,8 @@ dependencies {
     implementation(KotlinX.coroutines.reactor)
 
     implementation("org.springframework.modulith:spring-modulith-core")
+    implementation("org.springframework.modulith:spring-modulith-events-api")
+
     implementation(Spring.boot.webflux)
     implementation(Spring.boot.validation)
 
