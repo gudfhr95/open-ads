@@ -1,7 +1,7 @@
 package io.openads.adsmanager.adaccount.usecase
 
 import io.openads.adsmanager.adaccount.domain.service.CreateAdUserService
-import io.openads.adsmanager.common.domain.vo.UserId
+import io.openads.adsmanager.adaccount.domain.vo.UserId
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -13,8 +13,10 @@ class CreateAdUserUseCase(
     suspend operator fun invoke(
         userId: UserId,
         name: String,
+        email: String,
     ) = createAdUser(
         userId = userId,
         name = name,
+        email = email,
     )
 }

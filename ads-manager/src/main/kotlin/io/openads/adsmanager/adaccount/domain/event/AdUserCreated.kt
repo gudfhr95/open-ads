@@ -1,6 +1,6 @@
 package io.openads.adsmanager.adaccount.domain.event
 
-import io.openads.adsmanager.common.domain.vo.UserId
+import io.openads.adsmanager.adaccount.domain.vo.UserId
 
 data class AdUserCreated(
     val userId: UserId,

@@ -2,7 +2,7 @@ package io.openads.adsmanager.adaccount.usecase
 
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldBe
-import io.openads.adsmanager.common.domain.vo.UserId
+import io.openads.adsmanager.adaccount.domain.vo.UserId
 import io.openads.adsmanager.test.spec.IntegrationTestSpec
 import java.util.UUID
 

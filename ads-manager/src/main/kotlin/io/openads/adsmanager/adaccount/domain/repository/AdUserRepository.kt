@@ -1,7 +1,7 @@
 package io.openads.adsmanager.adaccount.domain.repository
 
 import io.openads.adsmanager.adaccount.domain.entity.AdUser
-import io.openads.adsmanager.common.domain.vo.UserId
+import io.openads.adsmanager.adaccount.domain.vo.UserId
 import org.springframework.data.repository.kotlin.CoroutineCrudRepository
 
 interface AdUserRepository : CoroutineCrudRepository<AdUser, Long> {

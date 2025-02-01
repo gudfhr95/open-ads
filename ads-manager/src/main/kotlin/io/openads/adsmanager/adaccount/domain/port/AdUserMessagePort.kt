@@ -1,6 +1,6 @@
 package io.openads.adsmanager.adaccount.domain.port
 
-import io.openads.adsmanager.common.domain.vo.UserId
+import io.openads.adsmanager.adaccount.domain.vo.UserId
 import org.springframework.stereotype.Component
 
 @Component
