@@ -10,13 +10,8 @@ group = "io.openads.adsmanager"
 version = "0.0.1"
 
 dependencies {
-    implementation(platform("org.springframework.modulith:spring-modulith-bom:_"))
-
     implementation(KotlinX.coroutines.core)
     implementation(KotlinX.coroutines.reactor)
-
-    implementation("org.springframework.modulith:spring-modulith-core")
-    implementation("org.springframework.modulith:spring-modulith-events-api")
 
     implementation(Spring.boot.webflux)
     implementation(Spring.boot.validation)
@@ -24,13 +19,13 @@ dependencies {
     implementation(Spring.boot.security)
     implementation(Spring.boot.oauth2ResourceServer)
 
+    implementation(Spring.boot.data.jdbc)
     implementation(Spring.boot.data.r2dbc)
     runtimeOnly("com.github.jasync-sql:jasync-r2dbc-mysql:_")
     implementation("org.flywaydb:flyway-core")
     implementation("org.flywaydb:flyway-mysql")
     runtimeOnly("com.mysql:mysql-connector-j")
 
-    testImplementation("org.springframework.modulith:spring-modulith-starter-test")
     testImplementation(Spring.boot.test)
     testImplementation(Testing.Kotest.extensions.spring)
 
