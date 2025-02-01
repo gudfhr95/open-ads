@@ -11,9 +11,16 @@ class AdUserControllerV1AcceptanceTest(
 ) : AcceptanceTestSpec({
     Given("a user with jwt") {
         val userId = UUID.randomUUID().toString()
-        val name = "test"
+        val name = "name"
+        val email = "email@test.com"
 
-        extensions(MockJwtExtension(userId, name))
+        extensions(
+            MockJwtExtension(
+                userId = userId,
+                username = name,
+                email = email,
+            ),
+        )
 
         When("the user creates an ad user") {
             Then("the ad user should be created") {
@@ -24,6 +31,7 @@ class AdUserControllerV1AcceptanceTest(
                     .value {
                         it.userId shouldBe userId
                         it.name shouldBe name
+                        it.email shouldBe email
                     }
             }
 

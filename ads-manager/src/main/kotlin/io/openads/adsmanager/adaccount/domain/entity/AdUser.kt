@@ -24,5 +24,6 @@ class AdUser(
 
     init {
         require(name.isNotBlank()) { "Name cannot be blank" }
+        require(email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\$".toRegex())) { "Email must be valid" }
     }
 }

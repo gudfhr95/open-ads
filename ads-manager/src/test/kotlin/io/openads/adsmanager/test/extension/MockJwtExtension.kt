@@ -11,15 +11,17 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import java.util.UUID
 
 class MockJwtExtension(
-    private val id: String = UUID.randomUUID().toString(),
-    private val username: String = "test",
+    private val userId: String = UUID.randomUUID().toString(),
+    private val username: String = "name",
+    private val email: String = "email@test.com",
 ) : BeforeTestListener,
     AfterTestListener {
     override suspend fun beforeTest(testCase: TestCase) {
         val jwt = Jwt.withTokenValue("token")
             .header("alg", "none")
-            .subject(id)
+            .subject(userId)
             .claim("name", username)
+            .claim("email", email)
             .build()
 
         val token = JwtAuthenticationToken(
