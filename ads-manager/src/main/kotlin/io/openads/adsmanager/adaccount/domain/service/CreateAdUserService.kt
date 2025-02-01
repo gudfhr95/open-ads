@@ -1,18 +1,15 @@
 package io.openads.adsmanager.adaccount.domain.service
 
 import io.openads.adsmanager.adaccount.domain.entity.AdUser
-import io.openads.adsmanager.adaccount.domain.event.AdUserCreated
+import io.openads.adsmanager.adaccount.domain.port.AdUserMessagePort
 import io.openads.adsmanager.adaccount.domain.repository.AdUserRepository
 import io.openads.adsmanager.common.domain.vo.UserId
-import kotlinx.coroutines.reactor.awaitSingleOrNull
-import org.springframework.context.ApplicationEventPublisher
 import org.springframework.stereotype.Service
-import org.springframework.transaction.reactive.TransactionalEventPublisher
 
 @Service
 class CreateAdUserService(
-    private val eventPublisher: ApplicationEventPublisher,
     private val adUserRepository: AdUserRepository,
+    private val adUserMessagePort: AdUserMessagePort,
 ) {
     suspend operator fun invoke(
         userId: UserId,
@@ -29,12 +26,7 @@ class CreateAdUserService(
             ),
         )
 
-        TransactionalEventPublisher(eventPublisher).publishEvent(
-            AdUserCreated(
-                userId = userId,
-                name = name,
-            ),
-        ).awaitSingleOrNull()
+        adUserMessagePort.sendAdUserCreatedMessage(userId)
 
         return adUser
     }

@@ -26,6 +26,9 @@ dependencies {
     implementation("org.flywaydb:flyway-mysql")
     runtimeOnly("com.mysql:mysql-connector-j")
 
+    implementation(Spring.kafka)
+    implementation("io.projectreactor.kafka:reactor-kafka:_")
+
     testImplementation(Spring.boot.test)
     testImplementation(Testing.Kotest.extensions.spring)
 
