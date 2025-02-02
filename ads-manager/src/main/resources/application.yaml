@@ -2,19 +2,11 @@ server:
   port: 3000
 
 spring:
+  config:
+    import:
+      - classpath:database.yaml
+      - classpath:event.yaml
+      - classpath:security.yaml
   threads:
     virtual:
       enabled: true
-  datasource:
-    url: jdbc:mysql://localhost:3306/ads_manager
-    username: root
-    password: password
-  flyway:
-    url: jdbc:mysql://localhost:3306/ads_manager
-    user: root
-    password: password
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:8000/realms/open-ads/protocol/openid-connect/certs

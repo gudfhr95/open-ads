@@ -10,10 +10,13 @@ group = "io.openads.adsmanager"
 version = "0.0.1"
 
 dependencies {
-    implementation(KotlinX.coroutines.core)
-    implementation(KotlinX.coroutines.reactor)
+    implementation(platform("org.springframework.modulith:spring-modulith-bom:_"))
+
+    implementation("org.springframework.modulith:spring-modulith-events-api")
+    implementation("org.springframework.modulith:spring-modulith-starter-jdbc")
 
     implementation(Spring.boot.web)
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation(Spring.boot.validation)
 
     implementation(Spring.boot.security)
