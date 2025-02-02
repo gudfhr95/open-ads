@@ -2,12 +2,16 @@ package io.openads.adsmanager.adaccount.usecase
 
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldBe
+import io.mockk.verify
+import io.openads.adsmanager.adaccount.domain.event.AdUserCreated
 import io.openads.adsmanager.adaccount.domain.vo.AdUserId
 import io.openads.adsmanager.test.spec.IntegrationTestSpec
+import org.springframework.context.ApplicationEventPublisher
 import java.util.UUID
 
 class CreateAdUserUseCaseTest(
     private val createAdUserUseCase: CreateAdUserUseCase,
+    private val eventPublisher: ApplicationEventPublisher,
 ) : IntegrationTestSpec({
     Given("valid adUserId, name and email") {
         val adUserId = AdUserId(UUID.randomUUID().toString())
@@ -25,6 +29,18 @@ class CreateAdUserUseCaseTest(
                 user.adUserId shouldBe adUserId
                 user.name shouldBe name
                 user.email shouldBe email
+            }
+
+            Then("it should publish AdUserCreated event") {
+                verify {
+                    eventPublisher.publishEvent(
+                        AdUserCreated(
+                            adUserId = adUserId,
+                            name = name,
+                            email = email,
+                        ),
+                    )
+                }
             }
 
             And("create same user again") {
