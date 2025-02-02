@@ -10,7 +10,7 @@ class CreateAdUserUseCase(
     private val createAdUser: CreateAdUserService,
 ) {
     @Transactional
-    suspend operator fun invoke(
+    operator fun invoke(
         userId: UserId,
         name: String,
         email: String,

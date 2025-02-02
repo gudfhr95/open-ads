@@ -5,5 +5,5 @@ import org.springframework.stereotype.Component
 
 @Component
 interface AdUserMessagePort {
-    suspend fun sendAdUserCreatedMessage(userId: UserId)
+    fun sendAdUserCreatedMessage(userId: UserId)
 }

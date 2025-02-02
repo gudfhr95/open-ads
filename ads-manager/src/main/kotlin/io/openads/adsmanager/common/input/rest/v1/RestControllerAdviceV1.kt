@@ -1,27 +1,27 @@
 package io.openads.adsmanager.common.input.rest.v1
 
+import jakarta.servlet.http.HttpServletRequest
 import org.springframework.http.HttpStatus
+import org.springframework.validation.BindException
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestControllerAdvice
-import org.springframework.web.bind.support.WebExchangeBindException
-import org.springframework.web.server.ServerWebExchange
 
 @RestControllerAdvice
 class RestControllerAdviceV1 {
-    @ExceptionHandler(WebExchangeBindException::class)
+    @ExceptionHandler(BindException::class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    fun handleWebExchangeBindException(
-        e: WebExchangeBindException,
-        exchange: ServerWebExchange,
+    fun handleBindException(
+        e: BindException,
+        request: HttpServletRequest,
     ): ErrorResponseV1 {
         val messages = e.bindingResult.allErrors.map { it.defaultMessage.toString() }
 
         return ErrorResponseV1(
             status = HttpStatus.BAD_REQUEST.value(),
             error = HttpStatus.BAD_REQUEST.reasonPhrase,
-            path = exchange.request.path.toString(),
-            requestId = exchange.request.id,
+            path = request.requestURI,
+            requestId = request.requestId,
             messages = messages,
         )
     }
@@ -30,12 +30,12 @@ class RestControllerAdviceV1 {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     fun handleIllegalArgumentException(
         e: IllegalArgumentException,
-        exchange: ServerWebExchange,
+        request: HttpServletRequest,
     ): ErrorResponseV1 = ErrorResponseV1(
         status = HttpStatus.BAD_REQUEST.value(),
         error = HttpStatus.BAD_REQUEST.reasonPhrase,
-        path = exchange.request.path.toString(),
-        requestId = exchange.request.id,
+        path = request.requestURI,
+        requestId = request.requestId,
         messages = listOf(e.message.toString()),
     )
 
@@ -43,12 +43,12 @@ class RestControllerAdviceV1 {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     fun handleIllegalStateException(
         e: IllegalStateException,
-        exchange: ServerWebExchange,
+        request: HttpServletRequest,
     ): ErrorResponseV1 = ErrorResponseV1(
         status = HttpStatus.BAD_REQUEST.value(),
         error = HttpStatus.BAD_REQUEST.reasonPhrase,
-        path = exchange.request.path.toString(),
-        requestId = exchange.request.id,
+        path = request.requestURI,
+        requestId = request.requestId,
         messages = listOf(e.message.toString()),
     )
 }

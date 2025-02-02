@@ -5,9 +5,9 @@ import io.kotest.core.listeners.BeforeTestListener
 import io.kotest.core.test.TestCase
 import io.kotest.core.test.TestResult
 import org.springframework.security.core.authority.AuthorityUtils
-import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.oauth2.jwt.Jwt
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken
+import org.springframework.security.test.context.TestSecurityContextHolder
 import java.util.UUID
 
 class MockJwtExtension(
@@ -30,13 +30,11 @@ class MockJwtExtension(
             username,
         )
 
-        val context = SecurityContextHolder.createEmptyContext()
+        val context = TestSecurityContextHolder.getContext()
         context.authentication = token
-
-        SecurityContextHolder.setContext(context)
     }
 
     override suspend fun afterTest(testCase: TestCase, result: TestResult) {
-        SecurityContextHolder.clearContext()
+        TestSecurityContextHolder.clearContext()
     }
 }

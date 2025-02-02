@@ -13,30 +13,27 @@ dependencies {
     implementation(KotlinX.coroutines.core)
     implementation(KotlinX.coroutines.reactor)
 
-    implementation(Spring.boot.webflux)
+    implementation(Spring.boot.web)
     implementation(Spring.boot.validation)
 
     implementation(Spring.boot.security)
     implementation(Spring.boot.oauth2ResourceServer)
 
     implementation(Spring.boot.data.jdbc)
-    implementation(Spring.boot.data.r2dbc)
-    runtimeOnly("com.github.jasync-sql:jasync-r2dbc-mysql:_")
+    runtimeOnly("com.mysql:mysql-connector-j")
     implementation("org.flywaydb:flyway-core")
     implementation("org.flywaydb:flyway-mysql")
-    runtimeOnly("com.mysql:mysql-connector-j")
 
     implementation(Spring.kafka)
-    implementation("io.projectreactor.kafka:reactor-kafka:_")
 
     testImplementation(Spring.boot.test)
+    testImplementation(Spring.boot.webflux)
     testImplementation(Testing.Kotest.extensions.spring)
 
     testImplementation(Spring.security.spring_security_test)
 
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("org.testcontainers:mysql:_")
-    testImplementation("org.testcontainers:r2dbc:_")
     testImplementation(Testing.Kotest.extensions.testContainers)
 }
 

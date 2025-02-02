@@ -11,7 +11,7 @@ class CreateAdUserService(
     private val adUserRepository: AdUserRepository,
     private val adUserMessagePort: AdUserMessagePort,
 ) {
-    suspend operator fun invoke(
+    operator fun invoke(
         userId: UserId,
         name: String,
         email: String,

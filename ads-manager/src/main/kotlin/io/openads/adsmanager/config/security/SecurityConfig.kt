@@ -2,17 +2,17 @@ package io.openads.adsmanager.config.security
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity
-import org.springframework.security.config.web.server.ServerHttpSecurity
-import org.springframework.security.web.server.SecurityWebFilterChain
+import org.springframework.security.config.annotation.web.builders.HttpSecurity
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
+import org.springframework.security.web.SecurityFilterChain
 
 @Configuration
-@EnableWebFluxSecurity
+@EnableWebSecurity
 class SecurityConfig {
     @Bean
-    fun securityWebFilterChain(http: ServerHttpSecurity): SecurityWebFilterChain = http
-        .authorizeExchange {
-            it.anyExchange().authenticated()
+    fun securityFilterChain(http: HttpSecurity): SecurityFilterChain = http
+        .authorizeHttpRequests {
+            it.anyRequest().authenticated()
         }
         .oauth2ResourceServer {
             it.jwt {

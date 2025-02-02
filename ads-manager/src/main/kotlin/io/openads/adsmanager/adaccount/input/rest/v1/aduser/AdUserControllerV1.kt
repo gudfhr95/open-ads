@@ -16,7 +16,7 @@ class AdUserControllerV1(
 ) {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    suspend fun create(
+    fun create(
         authentication: JwtAuthenticationToken,
     ): AdUserResponseV1 {
         val adUser = createAdUser(
