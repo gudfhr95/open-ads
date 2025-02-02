@@ -1,22 +1,22 @@
 package io.openads.adsmanager.adaccount.domain.entity
 
-import io.openads.adsmanager.adaccount.domain.vo.UserId
+import io.openads.adsmanager.adaccount.domain.vo.AdUserId
 import io.openads.adsmanager.common.domain.entity.UpdatableEntity
 import org.springframework.data.relational.core.mapping.Table
 
 @Table("ad_users")
 class AdUser(
-    val userId: UserId,
+    val adUserId: AdUserId,
     val name: String,
     val email: String,
 ) : UpdatableEntity() {
     companion object {
         fun of(
-            userId: UserId,
+            adUserId: AdUserId,
             name: String,
             email: String,
         ) = AdUser(
-            userId = userId,
+            adUserId = adUserId,
             name = name,
             email = email,
         )

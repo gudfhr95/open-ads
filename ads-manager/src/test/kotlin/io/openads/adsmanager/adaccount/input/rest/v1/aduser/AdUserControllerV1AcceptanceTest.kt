@@ -1,6 +1,7 @@
 package io.openads.adsmanager.adaccount.input.rest.v1.aduser
 
 import io.kotest.matchers.shouldBe
+import io.openads.adsmanager.adaccount.domain.vo.AdUserId
 import io.openads.adsmanager.test.extension.MockJwtExtension
 import io.openads.adsmanager.test.spec.AcceptanceTestSpec
 import org.springframework.test.web.reactive.server.WebTestClient
@@ -10,13 +11,13 @@ class AdUserControllerV1AcceptanceTest(
     val client: WebTestClient,
 ) : AcceptanceTestSpec({
     Given("a user with jwt") {
-        val userId = UUID.randomUUID().toString()
+        val adUserId = AdUserId(UUID.randomUUID().toString())
         val name = "name"
         val email = "email@test.com"
 
         extensions(
             MockJwtExtension(
-                userId = userId,
+                adUserId = adUserId,
                 username = name,
                 email = email,
             ),
@@ -29,7 +30,7 @@ class AdUserControllerV1AcceptanceTest(
                     .isCreated
                     .expectBody(AdUserResponseV1::class.java)
                     .value {
-                        it.userId shouldBe userId
+                        it.adUserId shouldBe adUserId
                         it.name shouldBe name
                         it.email shouldBe email
                     }

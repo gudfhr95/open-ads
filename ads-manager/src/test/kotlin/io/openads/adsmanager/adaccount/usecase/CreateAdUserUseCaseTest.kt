@@ -2,27 +2,27 @@ package io.openads.adsmanager.adaccount.usecase
 
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldBe
-import io.openads.adsmanager.adaccount.domain.vo.UserId
+import io.openads.adsmanager.adaccount.domain.vo.AdUserId
 import io.openads.adsmanager.test.spec.IntegrationTestSpec
 import java.util.UUID
 
 class CreateAdUserUseCaseTest(
     private val createAdUserUseCase: CreateAdUserUseCase,
 ) : IntegrationTestSpec({
-    Given("valid userId, name and email") {
-        val userId = UserId(UUID.randomUUID().toString())
+    Given("valid adUserId, name and email") {
+        val adUserId = AdUserId(UUID.randomUUID().toString())
         val name = "name"
         val email = "email@test.com"
 
         When("create a user") {
             val user = createAdUserUseCase(
-                userId = userId,
+                adUserId = adUserId,
                 name = name,
                 email = email,
             )
 
-            Then("should return a user") {
-                user.userId shouldBe userId
+            Then("it should return a user") {
+                user.adUserId shouldBe adUserId
                 user.name shouldBe name
                 user.email shouldBe email
             }
@@ -31,7 +31,7 @@ class CreateAdUserUseCaseTest(
                 Then("it should throw exception") {
                     val exception = shouldThrow<IllegalStateException> {
                         createAdUserUseCase(
-                            userId = userId,
+                            adUserId = adUserId,
                             name = name,
                             email = email,
                         )
@@ -44,7 +44,7 @@ class CreateAdUserUseCaseTest(
     }
 
     Given("invalid name") {
-        val userId = UserId(UUID.randomUUID().toString())
+        val adUserId = AdUserId(UUID.randomUUID().toString())
         val name = " "
         val email = "email@test.com"
 
@@ -52,7 +52,7 @@ class CreateAdUserUseCaseTest(
             Then("it should throw exception") {
                 val exception = shouldThrow<IllegalArgumentException> {
                     createAdUserUseCase(
-                        userId = userId,
+                        adUserId = adUserId,
                         name = name,
                         email = email,
                     )
@@ -64,7 +64,7 @@ class CreateAdUserUseCaseTest(
     }
 
     Given("invalid email") {
-        val userId = UserId(UUID.randomUUID().toString())
+        val adUserId = AdUserId(UUID.randomUUID().toString())
         val name = "name"
         val email = "email"
 
@@ -72,7 +72,7 @@ class CreateAdUserUseCaseTest(
             Then("it should throw exception") {
                 val exception = shouldThrow<IllegalArgumentException> {
                     createAdUserUseCase(
-                        userId = userId,
+                        adUserId = adUserId,
                         name = name,
                         email = email,
                     )

@@ -1,5 +1,5 @@
 ALTER table ad_users
-  ADD COLUMN user_id    CHAR(36) UNIQUE,
+  ADD COLUMN ad_user_id    CHAR(36) UNIQUE,
   ADD COLUMN name       VARCHAR(255),
   ADD COLUMN email      VARCHAR(255),
   ADD COLUMN created_at TIMESTAMP,

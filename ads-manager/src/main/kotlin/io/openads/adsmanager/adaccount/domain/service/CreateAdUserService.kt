@@ -3,7 +3,7 @@ package io.openads.adsmanager.adaccount.domain.service
 import io.openads.adsmanager.adaccount.domain.entity.AdUser
 import io.openads.adsmanager.adaccount.domain.event.AdUserCreated
 import io.openads.adsmanager.adaccount.domain.repository.AdUserRepository
-import io.openads.adsmanager.adaccount.domain.vo.UserId
+import io.openads.adsmanager.adaccount.domain.vo.AdUserId
 import org.springframework.context.ApplicationEventPublisher
 import org.springframework.stereotype.Service
 
@@ -13,17 +13,17 @@ class CreateAdUserService(
     private val eventPublisher: ApplicationEventPublisher,
 ) {
     operator fun invoke(
-        userId: UserId,
+        adUserId: AdUserId,
         name: String,
         email: String,
     ): AdUser {
-        check(!adUserRepository.existsByUserId(userId)) {
+        check(!adUserRepository.existsByAdUserId(adUserId)) {
             "User already exists"
         }
 
         val adUser = adUserRepository.save(
             AdUser.of(
-                userId = userId,
+                adUserId = adUserId,
                 name = name,
                 email = email,
             ),
@@ -31,7 +31,7 @@ class CreateAdUserService(
 
         eventPublisher.publishEvent(
             AdUserCreated(
-                userId = adUser.userId,
+                adUserId = adUser.adUserId,
                 name = adUser.name,
                 email = adUser.email,
             ),

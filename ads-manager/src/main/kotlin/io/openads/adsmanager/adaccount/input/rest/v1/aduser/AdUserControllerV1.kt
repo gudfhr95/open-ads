@@ -1,6 +1,6 @@
 package io.openads.adsmanager.adaccount.input.rest.v1.aduser
 
-import io.openads.adsmanager.adaccount.domain.vo.UserId
+import io.openads.adsmanager.adaccount.domain.vo.AdUserId
 import io.openads.adsmanager.adaccount.usecase.CreateAdUserUseCase
 import org.springframework.http.HttpStatus
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken
@@ -20,7 +20,7 @@ class AdUserControllerV1(
         authentication: JwtAuthenticationToken,
     ): AdUserResponseV1 {
         val adUser = createAdUser(
-            userId = UserId(authentication.token.subject),
+            adUserId = AdUserId(authentication.token.subject),
             name = authentication.name,
             email = authentication.token.getClaim<String>("email"),
         )

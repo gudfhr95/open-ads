@@ -12,9 +12,6 @@ version = "0.0.1"
 dependencies {
     implementation(platform("org.springframework.modulith:spring-modulith-bom:_"))
 
-    implementation("org.springframework.modulith:spring-modulith-events-api")
-    implementation("org.springframework.modulith:spring-modulith-starter-jdbc")
-
     implementation(Spring.boot.web)
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation(Spring.boot.validation)
@@ -27,7 +24,9 @@ dependencies {
     implementation("org.flywaydb:flyway-core")
     implementation("org.flywaydb:flyway-mysql")
 
-    implementation(Spring.kafka)
+    implementation("org.springframework.modulith:spring-modulith-events-api")
+    implementation("org.springframework.modulith:spring-modulith-starter-jdbc")
+    implementation("org.springframework.modulith:spring-modulith-events-kafka")
 
     testImplementation(Spring.boot.test)
     testImplementation(Spring.boot.webflux)

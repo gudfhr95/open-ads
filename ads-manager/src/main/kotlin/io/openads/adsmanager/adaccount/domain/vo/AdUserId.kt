@@ -1,4 +1,4 @@
 package io.openads.adsmanager.adaccount.domain.vo
 
 @JvmInline
-value class UserId(val value: String)
+value class AdUserId(val value: String)

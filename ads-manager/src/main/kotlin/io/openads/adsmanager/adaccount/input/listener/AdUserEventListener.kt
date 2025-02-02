@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component
 class AdUserEventListener {
     @ApplicationModuleListener
     fun onAdUserCreated(event: AdUserCreated) {
-        println("Ad user created: ${event.userId} - ${event.name}")
+        println("Ad user created: ${event.adUserId} - ${event.name}")
     }
 }
