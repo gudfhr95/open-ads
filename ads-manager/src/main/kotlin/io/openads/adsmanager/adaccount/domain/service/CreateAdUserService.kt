@@ -1,7 +1,7 @@
 package io.openads.adsmanager.adaccount.domain.service
 
 import io.openads.adsmanager.adaccount.domain.entity.AdUser
-import io.openads.adsmanager.adaccount.domain.event.AdUserCreated
+import io.openads.adsmanager.adaccount.domain.event.AdUserCreatedV1
 import io.openads.adsmanager.adaccount.domain.repository.AdUserRepository
 import io.openads.adsmanager.adaccount.domain.vo.AdUserId
 import org.springframework.context.ApplicationEventPublisher
@@ -30,7 +30,7 @@ class CreateAdUserService(
         )
 
         eventPublisher.publishEvent(
-            AdUserCreated(
+            AdUserCreatedV1(
                 adUserId = adUser.adUserId,
                 name = adUser.name,
                 email = adUser.email,

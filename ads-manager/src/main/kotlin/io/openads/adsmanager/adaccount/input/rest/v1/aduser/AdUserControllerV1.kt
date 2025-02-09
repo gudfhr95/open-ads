@@ -1,7 +1,7 @@
 package io.openads.adsmanager.adaccount.input.rest.v1.aduser
 
 import io.openads.adsmanager.adaccount.domain.vo.AdUserId
-import io.openads.adsmanager.adaccount.usecase.CreateAdUserUseCase
+import io.openads.adsmanager.adaccount.usecase.aduser.CreateAdUserUseCase
 import org.springframework.http.HttpStatus
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken
 import org.springframework.web.bind.annotation.PostMapping

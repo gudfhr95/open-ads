@@ -1,7 +1,7 @@
 package io.openads.adsmanager.adaccount.domain.entity
 
 import io.openads.adsmanager.adaccount.domain.vo.AdUserId
-import io.openads.adsmanager.common.domain.entity.UpdatableEntity
+import io.openads.adsmanager.shared.domain.entity.UpdatableEntity
 import org.springframework.data.relational.core.mapping.Table
 
 @Table("ad_users")

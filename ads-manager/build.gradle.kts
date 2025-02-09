@@ -31,6 +31,7 @@ dependencies {
     testImplementation(Spring.boot.test)
     testImplementation(Spring.boot.webflux)
     testImplementation(Testing.Kotest.extensions.spring)
+    testImplementation("com.ninja-squad:springmockk:_")
 
     testImplementation(Spring.security.spring_security_test)
 
@@ -39,7 +40,7 @@ dependencies {
     testImplementation(Testing.Kotest.extensions.testContainers)
 }
 
-val koverExcludedClasses = listOf("*AdsManagerApplication*")
+val koverExcludedClasses = listOf("*Application*")
 extra["koverExcludedClasses"] = koverExcludedClasses
 kover {
     reports {

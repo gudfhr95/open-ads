@@ -15,7 +15,7 @@ dependencies {
     testImplementation(Spring.boot.test)
 }
 
-val koverExcludedClasses = listOf("*AdsTrackerApplication*")
+val koverExcludedClasses = listOf("*Application*")
 extra["koverExcludedClasses"] = koverExcludedClasses
 kover {
     reports {
