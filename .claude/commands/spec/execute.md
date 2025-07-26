@@ -5,7 +5,7 @@ Execute specific tasks from the Github issue.
 ## Usage
 
 ```
-/spec:execute [feature-name]
+/spec:execute [feature-name] [github-issue-id]
 ```
 
 ## Instructions
@@ -51,14 +51,16 @@ You are executing implementation tasks from the spec workflow.
 ## Examples
 
 ```
-/spec:execute user-authentication
+/spec:execute user-authentication 1
+/spec:execute user-authentication 2
 ```
 
 ## Important Rules
 
 - Only execute ONE task at a time
-- Before task start, **ALWAYS** change Github project task status to `IN PROGESS`
-- Before task start, **ALWAYS** create a Git branch from the Github issue
+- Before task start:
+  - **ALWAYS** change Github project task status to `IN PROGESS`
+  - **ALWAYS** create a Git branch from the Github issue
 - **ALWAYS** create a Github pull request after task completion
 - Always stop after completing a task
 - Wait for user approval before continuing

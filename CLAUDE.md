@@ -51,7 +51,7 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 4. **Implementation Phase** (`/spec:execute`)
 
     - Create a Git branch from current working Github issue
-    - Execute tasks one by one
+    - Execute a task
     - After task completion, create a Github pull request
 
 ## Detailed Workflow Process
@@ -123,12 +123,12 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 4. Present complete task list emphasizing what will be reused vs. built new
 5. Ask: "Do the tasks look good?"
 6. **CRITICAL**: Wait for explicit approval before proceeding
-7. **AFTER APPROVAL**
-    - Create Github issues
+7. **AFTER APPROVAL**:
+    - Create Github issues according to tasks.md
     - Add issues to Github project
-8. **IMPORTANT**
+8. **IMPORTANT**:
+    - According to task hierarchy, create issues and sub-issues in Github
     - Each issue must have proper title, description and label
-    - If task has sub-tasks, create sub-tasks as sub-issues
     - When adding Github issues to Github project, fill in property fields like status, priority, etc.
 
 **Task Format**:
@@ -157,9 +157,11 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 5. Validate implementation against referenced requirements
 6. Run tests and checks if applicable
 7. **IMPORTANT**
-    - Before task start, change Github project task status to `IN PROGRESS`
-    - Before task start, create a Git branch from Github issue
-    - After task completion, create a Github pull request to get code review from user
+    - Before task start:
+      - change Github project task status to `IN PROGRESS`
+      - create a Git branch from Github issue
+    - After task completion:
+      - create a Github pull request
 
 **Implementation Rules**:
 
@@ -215,11 +217,11 @@ The workflow automatically creates and manages:
 .claude/
 ├── specs/
 │   └── {feature-name}/
-│       ├── requirements.md    # User stories and acceptance criteria
+│       ├── requirements.md   # User stories and acceptance criteria
 │       ├── design.md         # Technical architecture and design
 │       └── tasks.md          # Implementation task breakdown
 └── templates/
-    └── *-template.md        # Document templates
+    └── *-template.md         # Document templates
 ```
 
 ## Error Handling
@@ -248,7 +250,7 @@ A successful spec workflow completion includes:
 2. **Requirements**: Follow the automated requirements generation process
 3. **Design**: Review and approve the technical design
 4. **Tasks**: Review and approve the implementation plan
-5. **Implementation**: Execute tasks one by one with `/spec:execute <feature-name>`
+5. **Implementation**: Execute tasks one by one with `/spec:execute <feature-name> <github-issue-id>`
 6. **Validation**: Ensure each task meets requirements before proceeding
 
 Remember: The workflow ensures systematic feature development with proper documentation, validation, and quality control
