@@ -126,17 +126,19 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
     - References specific requirements using _Requirements: X.Y_ format
     - Builds incrementally on previous tasks
     - Focuses on coding activities only
-3. Use checkbox format with hierarchical numbering
+3. Use hierarchical numbering
 4. Present complete task list emphasizing what will be reused vs. built new
 5. Ask: "Do the tasks look good?"
 6. **CRITICAL**: Wait for explicit approval before proceeding
-7. **AFTER APPROVAL**: Create issues to `AD` project in JIRA
-8. **IMPORTANT**: Each JIRA issue must have `TO DO` status, proper title, description and extra properties.
+7. **AFTER APPROVAL**
+    1. Create tasks to Github project board
+    2. Create Github issues from Github project tasks
+8. **IMPORTANT**: Each task must have proper title, description, label, hierarchical relationship and extra properties.
 
 **Task Format**:
 
 ```markdown
-- [ ] 1 - Task description
+1. Task description
     - Specific implementation details
     - Files to create/modify
     - _Leverage: existing-component.ts, utils/helpers.js_
@@ -157,20 +159,19 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 
 **Process**:
 
-1. Load requirements.md, design.md, and tasks.md and JIRA issue for context.
+1. Load requirements.md, design.md, and tasks.md and Github issue for context.
 2. Execute ONLY the specified task (never multiple tasks)
 3. **Prioritize code reuse**: Leverage existing components, utilities, and patterns identified in task _Leverage_
    section
 4. Implement following existing code patterns and conventions
 5. Validate implementation against referenced requirements
 6. Run tests and checks if applicable
-7. **CRITICAL**: Before task start, change JIRA issue status to `IN PROGRESS`
+7. **CRITICAL**: Before task start, change Github project task status to `IN PROGRESS`
 8. **CRITICAL**: After task completion, create a Github pull request to get code review from user
 
 **Implementation Rules**:
 
 - Execute ONE task at a time
-- **CRITICAL**: Before starting the task, change JIRA issue status to `IN PROGRESS`
 - Always stop after completing a task
 - Wait for user approval before continuing
 - Never skip tasks or jump ahead
@@ -190,7 +191,7 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 ### Task Execution
 
 - **ONLY** execute one task at a time during implementation
-- **CRITICAL**: Before starting the task, change JIRA issue status to `IN PROGRESS`
+- **CRITICAL**: Before task start, change Github project task status to `IN PROGRESS`
 - **ALWAYS** stop after completing a task
 - **NEVER** automatically proceed to the next task
 - **MUST** wait for user to request next task execution
@@ -200,9 +201,9 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 
 When completing any task during `/spec:execute`:
 
-2. **Confirm to user**: Create a Github pull request to get code review from user
-3. **Stop execution**: Do not proceed to next task automatically
-4. **Wait for instruction**: Let user decide next steps
+1. **Confirm to user**: Create a Github pull request to get code review from user
+2. **Stop execution**: Do not proceed to next task automatically
+3. **Wait for instruction**: Let user decide next steps
 
 ### Requirement References
 
@@ -227,9 +228,8 @@ The workflow automatically creates and manages:
 │       ├── requirements.md    # User stories and acceptance criteria
 │       ├── design.md         # Technical architecture and design
 │       └── tasks.md          # Implementation task breakdown
-├── templates/
-│   └── *-template.md        # Document templates
-└── spec-config.json         # Workflow configuration
+└── templates/
+    └── *-template.md        # Document templates
 ```
 
 ## Error Handling
@@ -258,7 +258,7 @@ A successful spec workflow completion includes:
 2. **Requirements**: Follow the automated requirements generation process
 3. **Design**: Review and approve the technical design
 4. **Tasks**: Review and approve the implementation plan
-5. **Implementation**: Execute tasks one by one with `/spec:execute <feature-name> <jira-issue-id>`
+5. **Implementation**: Execute tasks one by one with `/spec:execute <feature-name>`
 6. **Validation**: Ensure each task meets requirements before proceeding
 
 Remember: The workflow ensures systematic feature development with proper documentation, validation, and quality control

@@ -128,7 +128,7 @@ performance-profile: "complex"
 - **Auto-Persona**: Backend, Architect, Scribe, Security (context-dependent)
 - **MCP Integration**: Context7 (patterns), Sequential (logic)
 - **Tool Orchestration**: [Read, Write, Edit, MultiEdit, Bash, Glob, TodoWrite, Task]
-- **Arguments**: `<feature-name>`, `<jira-issue-id>`, `[description]`, `--<flags>`
+- **Arguments**: `<feature-name>`, `[description]`, `--<flags>`
 
 **`/sc:build $ARGUMENTS`**
 
