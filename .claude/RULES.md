@@ -47,7 +47,7 @@ Simple actionable rules for Claude Code SuperClaude framework operation.
 ✅ Batch tool calls
 ✅ Validate before execution
 ✅ Check framework compatibility
-✅ Auto-activate personas
+✅ Auto-activate sub agents
 ✅ Preserve context across operations
 ✅ Use quality gates (see ORCHESTRATOR.md)
 ✅ Complete discovery before codebase changes
@@ -68,6 +68,6 @@ Simple actionable rules for Claude Code SuperClaude framework operation.
 ### Auto-Triggers
 
 - Wave mode: complexity ≥0.7 + multiple domains
-- Personas: domain keywords + complexity assessment
+- Sub agents: domain keywords + complexity assessment
 - MCP servers: task type + performance requirements
 - Quality gates: all operations apply 8-step validation

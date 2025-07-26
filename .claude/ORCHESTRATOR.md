@@ -581,10 +581,6 @@ Smart MCP server selection and orchestration.
 
 **Core Coordination Logic**: Multi-server operations, fallback chains, resource optimization
 
-### Persona Integration
-
-**Reference**: See PERSONAS.md for detailed persona specifications and MCP server preferences.
-
 ## 🚨 Emergency Protocols
 
 Handling resource constraints and failures gracefully.

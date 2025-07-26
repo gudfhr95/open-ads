@@ -195,22 +195,6 @@ Flag system for Claude Code SuperClaude framework with auto-activation and confl
 - Pauses for review and approval before each cycle
 - Allows manual guidance and course correction
 
-## Persona Activation Flags
-
-**Available Personas**:
-
-- `--persona-architect`: Systems architecture specialist
-- `--persona-frontend`: UX specialist, accessibility advocate
-- `--persona-backend`: Reliability engineer, API specialist
-- `--persona-analyzer`: Root cause specialist
-- `--persona-security`: Threat modeler, vulnerability specialist
-- `--persona-mentor`: Knowledge transfer specialist
-- `--persona-refactorer`: Code quality specialist
-- `--persona-performance`: Optimization specialist
-- `--persona-qa`: Quality advocate, testing specialist
-- `--persona-devops`: Infrastructure specialist
-- `--persona-scribe=lang`: Professional writer, documentation specialist
-
 ## Introspection & Transparency Flags
 
 **`--introspect` / `--introspection`**
