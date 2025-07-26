@@ -50,6 +50,10 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 
 4. **Implementation Phase** (`/spec:execute`)
 
+    - Create a Git branch from current working Github issue
+    - Execute tasks one by one
+    - After task completion, create a Github pull request
+
 ## Detailed Workflow Process
 
 ### Phase 1: Requirements Gathering (`/spec:requirements`)
@@ -152,20 +156,18 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 4. Implement following existing code patterns and conventions
 5. Validate implementation against referenced requirements
 6. Run tests and checks if applicable
-7. **CRITICAL**
+7. **IMPORTANT**
     - Before task start, change Github project task status to `IN PROGRESS`
-    - Before task start, create a branch from Github issue
+    - Before task start, create a Git branch from Github issue
     - After task completion, create a Github pull request to get code review from user
 
 **Implementation Rules**:
 
 - Execute ONE task at a time
 - Always stop after completing a task
-- Wait for user approval before continuing
 - Never skip tasks or jump ahead
 - Validate against requirements
 - Follow existing code patterns
-- Confirm task completion status to user
 
 ## Critical Workflow Rules
 
@@ -183,13 +185,13 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 - **ALWAYS** stop after completing a task
 - **NEVER** automatically proceed to the next task
 - **MUST** wait for user to request next task execution
-- **CONFIRM** task completion status to user
+- **CONFIRM** task completion status to user by creating a Github pull request
 
 ### Task Completion Protocol
 
 When completing any task during `/spec:execute`:
 
-1. **Confirm to user**: Create a Github pull request to get code review from user
+1. **Confirm to user** by creating a Github pull request
 2. **Stop execution**: Do not proceed to next task automatically
 3. **Wait for instruction**: Let user decide next steps
 

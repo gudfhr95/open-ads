@@ -16,8 +16,8 @@ You are executing implementation tasks from the spec workflow.
 
     - Load requirements.md, design.md, tasks.md and Github issue for context
     - Identify the specific task to execute
-    - **CRITICAL**: Change Github project task status to `IN PROGRESS`
-    - **CRITICAL**: Create a branch from the Github issue
+    - **CRITICAL**: Change a Github project task status to `IN PROGRESS`
+    - **CRITICAL**: Create a Git branch from the Github issue
 
 2. **Task Execution**
 
@@ -42,11 +42,11 @@ You are executing implementation tasks from the spec workflow.
     - Ensure integration with existing code
 
 5. **Completion**
-    - **CRITICAL**: After task completion, create a Github pull request to get code review from user
+    - **CRITICAL**: After task completion, create a Github pull request
     - Update execution log with completion details
     - Stop and wait for user review
     - DO NOT automatically proceed to next task
-    - Confirm task completion status to user
+    - Confirm task completion status to user by creating a Github pull request
 
 ## Examples
 
@@ -58,9 +58,9 @@ You are executing implementation tasks from the spec workflow.
 
 - Only execute ONE task at a time
 - Before task start, **ALWAYS** change Github project task status to `IN PROGESS`
-- Before task start, **ALWAYS** create a branch from the Github issue
+- Before task start, **ALWAYS** create a Git branch from the Github issue
 - **ALWAYS** create a Github pull request after task completion
 - Always stop after completing a task
 - Wait for user approval before continuing
 - Never skip tasks or jump ahead
-- Confirm task completion status to user
+- Confirm task completion status to user by creating a Github pull request
