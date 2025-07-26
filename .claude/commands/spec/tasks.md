@@ -70,12 +70,13 @@ You are working on the tasks phase of the spec workflow.
     - **WAIT**: Do not create Github issues and Github project tasks until user explicitly approves tasks
     - **THEN EXECUTE**
         - Based on tasks.md, create Github issues
-        - Add Github issue relationship according to task hierarchy
         - Add issues in Github project
     - **PURPOSE**: For tracking task process
-    - **RESULT**: Github issues and project tasks created with proper hierarchy
-    - **IMPORTANT RULES**: Each task must have proper title, description, label, hierarchical relationship and extra
-      properties.
+    - **RESULT**: Github issues and Github project tasks with proper hierarchy
+    - **IMPORTANT RULES**
+        - Each issue must have proper title, description and label
+        - If task has sub-tasks, create sub-tasks as sub-issues
+        - When adding Github issues to Github project, fill in property fields like status, priority, etc.
 
 ## Task Structure
 

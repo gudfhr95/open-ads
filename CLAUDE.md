@@ -47,6 +47,7 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 
     - Create tasks.md
     - Get user approval
+    - Create Github issues and add them to Github project
 
 4. **Implementation Phase** (`/spec:execute`)
 
@@ -131,9 +132,12 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 5. Ask: "Do the tasks look good?"
 6. **CRITICAL**: Wait for explicit approval before proceeding
 7. **AFTER APPROVAL**
-    1. Create Github issues
-    2. Add issue to Github project
-8. **IMPORTANT**: Each issue must have proper title, description, label, hierarchical relationship and extra properties.
+    - Create Github issues
+    - Add issues to Github project
+8. **IMPORTANT**
+    - Each issue must have proper title, description and label
+    - If task has sub-tasks, create sub-tasks as sub-issues
+    - When adding Github issues to Github project, fill in property fields like status, priority, etc.
 
 **Task Format**:
 
@@ -195,7 +199,7 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 - **ALWAYS** stop after completing a task
 - **NEVER** automatically proceed to the next task
 - **MUST** wait for user to request next task execution
-- **CONFIRM** task completion status to user by creating Github pull request
+- **CONFIRM** task completion status to user
 
 ### Task Completion Protocol
 
