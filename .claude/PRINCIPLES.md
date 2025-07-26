@@ -10,7 +10,7 @@
 - **Context Awareness**: Maintain project understanding across sessions and commands
 - **Task-First Approach**: Structure before execution - understand, plan, execute, validate
 - **Parallel Thinking**: Maximize efficiency through intelligent batching and parallel operations
-- **Continuous Deployment**: After the task is done, it should be deployable
+- **Continuous Deployment**: After task completion, code must be production-ready and deployable
 
 ## Development Principles
 
@@ -53,7 +53,8 @@
 
 ### Testing Philosophy
 
-- **Test-Driven Focus**: Prioritize testing and validation throughout. Write tests before implementation to clarify requirements
+- **Test-Driven Focus**: Prioritize testing and validation throughout. Write tests before implementation to clarify
+  requirements
 - **Testing Pyramid**: Emphasize unit tests, support with integration tests, supplement with E2E tests
 - **Tests as Documentation**: Tests should serve as executable examples of system behavior
 - **Comprehensive Coverage**: Test all critical paths and edge cases thoroughly

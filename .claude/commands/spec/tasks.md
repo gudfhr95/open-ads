@@ -25,6 +25,7 @@ You are working on the tasks phase of the spec workflow.
 2. **Generate Task List** (prioritize code reuse)
 
     - Break design into atomic, executable coding tasks
+    - **IMPORTANT**: Tasks should be concrete, actionable, deployable and production-ready
     - **Prioritize extending/adapting existing code** over building from scratch
     - Use numbered hierarchy
     - Each task should reference specific requirements AND existing code to leverage
@@ -33,13 +34,12 @@ You are working on the tasks phase of the spec workflow.
 3. **Task Guidelines**
 
     - Tasks should be concrete and actionable
+    - **IMPORTANT**: After task completion, code must be production-ready and deployable
     - **Reference existing code to reuse**: Include specific files/components to extend or adapt
     - Include specific file names and components
     - Build incrementally (each task builds on previous)
     - Reference requirements using _Requirements: X.Y_ format
     - Use test-driven development approach leveraging existing test patterns
-    - Each task should be organized as a unit of deployment
-    - After the task is done, it should be deployable
 
 4. **Task Format**
 
@@ -66,14 +66,14 @@ You are working on the tasks phase of the spec workflow.
     - Make revisions based on feedback
     - Continue until explicit approval
 
-7. **Generate Github Project tasks and Github Issues** (ONLY after tasks approval)
-    - **WAIT**: Do not create Github project tasks and Github issues until user explicitly approves tasks
+7. **Generate Github Issues and Github Project tasks** (ONLY after tasks approval)
+    - **WAIT**: Do not create Github issues and Github project tasks until user explicitly approves tasks
     - **THEN EXECUTE**
-        - Based on tasks.md, create Github project tasks
-        - Create Github issues from Github project tasks
-        - Link Github issues according to task hierarchy
+        - Based on tasks.md, create Github issues
+        - Add Github issue relationship according to task hierarchy
+        - Add issues in Github project
     - **PURPOSE**: For tracking task process
-    - **RESULT**: Github project tasks and issues created with proper hierarchy
+    - **RESULT**: Github issues and project tasks created with proper hierarchy
     - **IMPORTANT RULES**: Each task must have proper title, description, label, hierarchical relationship and extra
       properties.
 
@@ -90,10 +90,10 @@ You are working on the tasks phase of the spec workflow.
 
 2. Implement data models
    2.1. Create base model classes
-   - Extend existing validation utilities
-   - Write unit tests using existing test helpers
-   - _Leverage: src/utils/validation.ts, tests/helpers/testUtils.ts_
-   - _Requirements: 2.1, 2.2_
+    - Extend existing validation utilities
+    - Write unit tests using existing test helpers
+    - _Leverage: src/utils/validation.ts, tests/helpers/testUtils.ts_
+    - _Requirements: 2.1, 2.2_
 ```
 
 ## Next Phase

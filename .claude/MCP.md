@@ -34,7 +34,8 @@ MCP (Model Context Protocol) server integration and orchestration system for Cla
 6. Validation: Verify implementation against official documentation
 7. Caching: Store successful patterns for session reuse
 
-**Integration Commands**: `/spec:create`, `/spec:requirements`, `/spec:design`, `/spec:tasks`, `/spec:execute`, `/sc:build`, `/sc:analyze`, `/sc:improve`, `/sc:design`, `/sc:document`, `/sc:explain`, `/sc:git`
+**Integration Commands**: `/spec:create`, `/spec:requirements`, `/spec:design`, `/spec:tasks`, `/spec:execute`,
+`/sc:build`, `/sc:analyze`, `/sc:improve`, `/sc:design`, `/sc:document`, `/sc:explain`, `/sc:git`
 
 **Error Recovery**:
 
@@ -163,130 +164,6 @@ MCP (Model Context Protocol) server integration and orchestration system for Cla
 - Cross-Browser Testing: Validate functionality across all major browsers
 - User Experience Testing: Accessibility validation, usability testing, conversion optimization
 
-## Atlassian Integration (Confluence & Jira)
-
-**Purpose**: Enterprise documentation management, agile project tracking, team collaboration, knowledge base creation
-
-**Activation Patterns**:
-
-- Keywords: "confluence", "jira", "ticket", "epic", "story", "sprint", "backlog", "confluence page", "jira issue", "atlassian"
-- Smart: URLs containing `atlassian.net`, spec workflow active, agile project management context
-
-**Workflow Process**:
-
-1. Cloud ID Resolution: Extract from URL or use `getAccessibleAtlassianResources` to find accessible instances
-2. Space/Project Discovery: List available Confluence spaces or Jira projects based on permissions
-3. Content Creation: Generate structured documentation or issues with proper formatting
-4. Hierarchy Management: Handle parent-child relationships for pages and epic-story-task structures
-5. Search & Discovery: Use CQL/JQL for advanced querying across content and issues
-6. Cross-Linking: Automatically link Jira issues to Confluence pages and vice versa
-7. Status Management: Track and transition issues through workflow states
-8. Permission Handling: Respect space/project permissions and user access levels
-9. Comment Integration: Add contextual comments to pages and issues
-10. Bulk Operations: Handle batch updates and migrations efficiently
-
-**Integration Commands**:
-
-- `/spec:create` → Creates Confluence requirements page + Jira epic
-- `/spec:tasks` → Generates Jira tasks linked to Confluence documentation
-- `/spec:execute` → Updates Jira status and adds execution notes
-- `/sc:document` → Creates/updates Confluence pages with navigation
-- `/sc:git` → Links commits to Jira issues, updates ticket status
-- `/sc:analyze` → Documents findings in Confluence with Jira tracking
-
-**Use Cases**:
-
-- **Requirements Management**: Create linked requirements in Confluence with Jira tracking
-- **Technical Documentation**: Generate API docs, architecture diagrams, runbooks
-- **Sprint Planning**: Create and manage sprint tasks with linked documentation
-- **Knowledge Base**: Build searchable team knowledge with categorization
-- **Release Notes**: Auto-generate from Jira issues and Confluence pages
-- **Incident Reports**: Document post-mortems with linked action items
-- **Team Onboarding**: Create structured onboarding guides with task tracking
-
-## Notion Integration
-
-**Purpose**: Flexible workspace management, database-driven documentation, personal and team knowledge management
-
-**Activation Patterns**:
-
-- Keywords: "notion", "notion page", "notion database", "notion block", "notion table", "notion board", "notion calendar", "notion wiki", "notion workspace"
-- Smart: URLs containing `notion.so`, database/table/board references, wiki-style documentation
-
-**Workflow Process**:
-
-1. Authentication: Validate Notion integration token and workspace access
-2. Page/Database Resolution: Find target pages or databases using search or direct IDs
-3. Content Structure: Convert markdown to Notion blocks with proper formatting
-4. Property Management: Handle database properties, relations, and formulas
-5. Hierarchical Organization: Create nested pages and maintain parent-child relationships
-6. Block Operations: Add, update, delete blocks with type-specific handling
-7. Database Queries: Filter, sort, and paginate database entries efficiently
-8. Comment Threading: Manage page and inline comments with resolution tracking
-9. Rich Content: Handle embeds, files, and multimedia content
-10. Sync State: Track changes and maintain consistency across operations
-
-**Integration Commands**:
-
-- `/spec:create` → Builds project wikis with linked databases
-- `/sc:task` → Creates Notion database entries for task management
-- `/sc:document` → Generates structured Notion pages with TOC
-- `/sc:analyze` → Creates analysis dashboards in Notion databases
-- `/sc:build` → Documents build processes in Notion
-- `/sc:improve` → Tracks improvements in Notion with progress metrics
-
-**Use Cases**:
-
-- **Project Wikis**: Create comprehensive project documentation with databases
-- **Task Databases**: Build custom task management with views and filters
-- **Knowledge Repository**: Organize team knowledge with tags and relations
-- **Meeting Notes**: Structure meeting notes with action items database
-- **Content Calendar**: Manage content pipeline with status tracking
-- **Learning Resources**: Build educational content with progress tracking
-- **Personal Dashboard**: Create unified workspace with multiple databases
-
-## GitHub Integration
-
-**Purpose**: Version control integration, pull request automation, issue tracking, CI/CD coordination
-
-**Activation Patterns**:
-
-- Keywords: "PR", "pull request", "github issue", "commit", "branch", "merge", "review", "github actions", "workflow", "release", "github"
-- Smart: Git repository detected, PR/issue numbers (#123), GitHub URLs, CI/CD context
-
-**Workflow Process**:
-
-1. Repository Context: Detect current repository or resolve from URLs
-2. Authentication: Use GitHub token or OAuth for API access
-3. Branch Management: Create, update, and manage feature branches
-4. Commit Creation: Generate meaningful commit messages with conventional format
-5. Pull Request Flow: Create PRs with templates, descriptions, and metadata
-6. Code Review: Add review comments, request changes, approve PRs
-7. Issue Management: Create, update, label, and link issues to code
-8. Workflow Automation: Trigger and monitor GitHub Actions workflows
-9. Notification Handling: Process and respond to GitHub notifications
-10. Release Management: Create releases with changelogs from commits/PRs
-
-**Integration Commands**:
-
-- `/sc:git` → Full git workflow with PR creation and issue linking
-- `/spec:execute` → Creates PR for implementation with linked issues
-- `/sc:analyze` → Adds code review comments and security findings
-- `/sc:document` → Updates repository documentation and wikis
-- `/sc:test` → Triggers test workflows and reports results
-- `/sc:build` → Manages build artifacts and deployment workflows
-
-**Use Cases**:
-
-- **Feature Development**: Branch creation, implementation, PR with review
-- **Code Review**: Automated and manual review with inline comments
-- **Issue Tracking**: Link code changes to issues with auto-closure
-- **CI/CD Management**: Trigger workflows, monitor runs, handle failures
-- **Security Scanning**: Create security advisories and track vulnerabilities
-- **Release Automation**: Generate releases with compiled changelogs
-- **Documentation Updates**: Keep docs in sync with code changes
-- **Dependency Management**: Track and update dependencies with PRs
-
 ## MCP Server Use Cases by Command Category
 
 **Development Commands**:
@@ -294,68 +171,44 @@ MCP (Model Context Protocol) server integration and orchestration system for Cla
 - Context7: Framework patterns, library documentation
 - Magic: UI component generation
 - Sequential: Complex setup workflows
-- Atlassian: Update Jira status during implementation, document builds in Confluence
-- Notion: Document implementation progress, track features in databases
-- GitHub: Create feature branches, manage PRs, link commits to issues
 
 **Analysis Commands**:
 
 - Context7: Best practices, patterns
 - Sequential: Deep analysis, systematic review
 - Playwright: Issue reproduction, visual testing
-- Atlassian: Generate analysis reports in Confluence, create investigation tickets
-- Notion: Create analysis dashboards, document findings in pages
-- GitHub: Add code review comments, analyze security vulnerabilities
 
 **Quality Commands**:
 
 - Context7: Security patterns, improvement patterns
 - Sequential: Code analysis, cleanup strategies
-- Atlassian: Track improvements in Jira, document cleanup in Confluence
-- Notion: Track quality metrics in databases, improvement roadmaps
-- GitHub: Create quality-focused PRs, track technical debt issues
 
 **Testing Commands**:
 
 - Sequential: Test strategy development
 - Playwright: E2E test execution, visual regression
-- Atlassian: Create test plans in Confluence, track execution in Jira
-- Notion: Test case databases, test result tracking
-- GitHub: Trigger test workflows, report test results in PRs
 
 **Documentation Commands**:
 
 - Context7: Documentation patterns, style guides, localization standards
 - Sequential: Content analysis, structured writing, multilingual documentation workflows
 - Scribe Persona: Professional writing with cultural adaptation and language-specific conventions
-- Atlassian: Primary Confluence page creation, knowledge base management
-- Notion: Wiki creation, structured documentation with TOC
-- GitHub: Update README files, maintain project wikis
 
 **Planning Commands**:
 
 - Context7: Benchmarks and patterns
 - Sequential: Complex planning and estimation
-- Atlassian: Create epics/stories in Jira, requirements in Confluence
-- Notion: Project roadmaps, sprint planning databases
-- GitHub: Milestone creation, project board management
 
 **Deployment Commands**:
 
 - Sequential: Deployment planning
 - Playwright: Deployment validation
-- Atlassian: Document deployment procedures, track releases in Jira
-- Notion: Deployment checklists, release documentation
-- GitHub: Manage deployment workflows, create releases
 
 **Meta Commands**:
 
 - Sequential: Search intelligence, task orchestration, iterative improvement analysis
 - All MCP: Comprehensive analysis and orchestration
 - Loop Command: Iterative workflows with Sequential (primary) and Context7 (patterns)
-- Atlassian: Multi-team coordination with Confluence spaces, cross-project Jira queries
-- Notion: Cross-workspace operations, unified dashboards
-- GitHub: Multi-repo operations, organization-wide automation
 
 ## Server Orchestration Patterns
 

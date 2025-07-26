@@ -131,9 +131,9 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 5. Ask: "Do the tasks look good?"
 6. **CRITICAL**: Wait for explicit approval before proceeding
 7. **AFTER APPROVAL**
-    1. Create tasks to Github project board
-    2. Create Github issues from Github project tasks
-8. **IMPORTANT**: Each task must have proper title, description, label, hierarchical relationship and extra properties.
+    1. Create Github issues
+    2. Add issue to Github project
+8. **IMPORTANT**: Each issue must have proper title, description, label, hierarchical relationship and extra properties.
 
 **Task Format**:
 
