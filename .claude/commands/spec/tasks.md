@@ -43,13 +43,7 @@ You are working on the tasks phase of the spec workflow.
 
 4. **Task Format**
 
-   ```markdown
-   1. Task description
-     - Sub-bullet with details
-     - Specific files to create/modify
-     - _Leverage: existing-component.ts, utils/helpers.js_
-     - _Requirements: 1.1, 2.3_
-   ```
+    - Use template (@tasks-template.md)
 
 5. **Excluded Tasks**
 
@@ -76,26 +70,12 @@ You are working on the tasks phase of the spec workflow.
     - **IMPORTANT RULES**
         - Each issue must have proper title, description and label
         - If task has sub-tasks, create sub-tasks as sub-issues
+        - Do not create new Github project. Use existing project.
         - When adding Github issues to Github project, fill in property fields like status, priority, etc.
 
 ## Task Structure
 
-```markdown
-# Implementation Plan
-
-1. Setup project structure
-    - Create directory structure following existing patterns
-    - Define core interfaces extending existing base classes
-    - _Leverage: src/types/base.ts, src/models/BaseModel.ts_
-    - _Requirements: 1.1_
-
-2. Implement data models
-   2.1. Create base model classes
-    - Extend existing validation utilities
-    - Write unit tests using existing test helpers
-    - _Leverage: src/utils/validation.ts, tests/helpers/testUtils.ts_
-    - _Requirements: 2.1, 2.2_
-```
+- Use template (@tasks-template.md)
 
 ## Next Phase
 

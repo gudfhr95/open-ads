@@ -73,18 +73,7 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 
 **Requirements Format**:
 
-```markdown
-## Requirements
-
-### Requirement 1
-
-**User Story:** As a [role], I want [feature], so that [benefit]
-
-#### Acceptance Criteria
-
-1. WHEN [event] THEN [system] SHALL [response]
-2. IF [condition] THEN [system] SHALL [response]
-```
+- Use template (@requirements-template.md)
 
 ### Phase 2: Design Creation (`/spec:design`)
 
@@ -141,13 +130,7 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 
 **Task Format**:
 
-```markdown
-1. Task description
-    - Specific implementation details
-    - Files to create/modify
-    - _Leverage: existing-component.ts, utils/helpers.js_
-    - _Requirements: 1.1, 2.3_
-```
+- Use template (@tasks-template.md)
 
 **Excluded Task Types**:
 
