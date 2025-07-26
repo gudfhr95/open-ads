@@ -16,10 +16,11 @@ You are executing implementation tasks from the spec workflow.
 
     - Load requirements.md, design.md, tasks.md and Github issue for context
     - Identify the specific task to execute
+    - **CRITICAL**: Change Github project task status to `IN PROGRESS`
+    - **CRITICAL**: Create a branch from the Github issue
 
 2. **Task Execution**
 
-    - **CRITICAL**: Before task start, change Github project task status to `IN PROGRESS`
     - Focus on ONE task at a time
     - If task has sub-tasks, start with those
     - Follow the implementation details from design.md
@@ -57,6 +58,7 @@ You are executing implementation tasks from the spec workflow.
 
 - Only execute ONE task at a time
 - Before task start, **ALWAYS** change Github project task status to `IN PROGESS`
+- Before task start, **ALWAYS** create a branch from the Github issue
 - **ALWAYS** create a Github pull request after task completion
 - Always stop after completing a task
 - Wait for user approval before continuing

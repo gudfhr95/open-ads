@@ -153,8 +153,10 @@ For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.cl
 4. Implement following existing code patterns and conventions
 5. Validate implementation against referenced requirements
 6. Run tests and checks if applicable
-7. **CRITICAL**: Before task start, change Github project task status to `IN PROGRESS`
-8. **CRITICAL**: After task completion, create a Github pull request to get code review from user
+7. **CRITICAL**
+    - Before task start, change Github project task status to `IN PROGRESS`
+    - Before task start, create a branch from Github issue
+    - After task completion, create a Github pull request to get code review from user
 
 **Implementation Rules**:
 
