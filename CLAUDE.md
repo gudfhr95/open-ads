@@ -14,16 +14,16 @@ approach to feature development that ensures quality, maintainability, and compl
 - **Atomic Implementation**: Execute one task at a time during implementation
 - **Requirement Traceability**: All tasks must reference specific requirement
 
-For more detailed principles and rules, refer to @PRINCIPLES.md and @RULES.md
+For more detailed principles and rules, refer to @.claude/PRINCIPLES.md and @.claude/RULES.md
 
 ## Available Commands
 
-- @COMMANDS.md
-- @FLAGS.md
-- @PERSONAS.md
-- @MCP.md
-- @ORCHESTRATOR.md
-- @MODES.md
+- @.claude/COMMANDS.md
+- @.claude/FLAGS.md
+- @.claude/PERSONAS.md
+- @.claude/MCP.md
+- @.claude/ORCHESTRATOR.md
+- @.claude/MODES.md
 
 ## Workflow Sequence
 
